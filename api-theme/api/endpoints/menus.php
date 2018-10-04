@@ -1,5 +1,4 @@
 <?php
-  // MODULE FOR WORDPRESS MENUS
   function menu_data(){
     // LOOP THROUGH MENUS
     function return_menus() { 
@@ -12,23 +11,19 @@
         $items = array();
         foreach ($items_raw as $item) {
           $i = new stdClass();
-          $i->ID = $item->ID;
+          $i->id = $item->ID;
           $i->title = $item->title;
-          $i->type = $item->type;
-          $i->url = false;
-          if ($item->type == 'custom') {
-            $i->url = $item->url;
-          }
+          $i->slug = basename(parse_url($item->url, PHP_URL_PATH));
+          $i->is_home = return_home($item->url);
+          $i->external_link = false;
           $items[] = $i;
         }
         $menu['items'] = $items;
-        //$menu['raw'] = $items_raw;
+        // $menu['raw'] = $items_raw;
         $menu_array[] = $menu;
       }
       return $menu_array;
     }
-    return array(
-      'menu_list' => return_menus(),
-    );
+    return return_menus();
   }
 ?>

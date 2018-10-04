@@ -96,3 +96,12 @@
       return $has_video;
     }
   }
+
+  function return_home($url) {
+    $end = basename(parse_url($url, PHP_URL_PATH));
+    if ($end != "") {
+      return false;
+    } else {
+      return true;
+    }
+  }
