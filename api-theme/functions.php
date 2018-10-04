@@ -36,6 +36,7 @@ add_action( 'after_setup_theme', 'my_theme_setup' );
 
 function register_my_menu() {
   register_nav_menu('main-menu',__( 'Main Menu' ));
+  register_nav_menu('footer-menu',__( 'Footer Menu' ));
 }
 
 add_action( 'init', 'register_my_menu' );
