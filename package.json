@@ -1,0 +1,17 @@
+{
+  "name": "base_api-theme",
+  "version": "1.0.0",
+  "description": "Base Wordpress API Theme",
+  "main": "index.js",
+  "repository": "https://github.com/dblodorn/base_api-theme.git",
+  "author": "Dain Blodorn Kim",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "fs": "^0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-sftp": "^0.1.5",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^5.0.1"
+  }
+}
