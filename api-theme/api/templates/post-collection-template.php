@@ -11,6 +11,7 @@
           'title' => get_the_title($p_data),
           'post_type' => $p_data->post_type,
           'thumbnail' => get_the_post_thumbnail_url($p->ID),
+          'short_description' => get_field('short_description', $p->ID),
           'taxonomies' => array(
             'category' => return_taxonomy_array($p, 'category'),
             'capabilities' => return_taxonomy_array($p, 'capability'),
@@ -29,6 +30,10 @@
       'id' => $p->ID,
       'short_description' => get_field('short_description', $p->ID),
       'description' => get_field('description', $p->ID),
+      'show_thumbnail' => get_field('show_thumbnail', $p->ID),
+      'show_taxonomies' => get_field('show_taxonomies', $p->ID),
+      'show_post_taxonomies' => get_field('show_post_taxonomies', $p->ID),
+      'columns' => get_field('columns', $p->ID),
       'post_collection' => get_project_list('post_collection', $p)
     );
   }
