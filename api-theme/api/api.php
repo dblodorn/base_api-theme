@@ -2,6 +2,7 @@
   //utils
   require_once('utils/utils.php');
   require_once('utils/post-data.php');
+  require_once('utils/taxonomy-data.php');
 
   //template based query functions
   require_once( 'endpoints/site-basics.php');

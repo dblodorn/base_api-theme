@@ -10,6 +10,7 @@
       'is_home' => return_home($permalink),
       'template' => $template_name,
       'content' => template_data($template_name, $post),
+      'taxonomies' => taxonomy_data($post),
     );
   }
 ?>

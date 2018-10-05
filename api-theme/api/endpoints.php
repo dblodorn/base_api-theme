@@ -4,8 +4,10 @@
     $data['site_basics'] = site_basics_data();
     $data['options'] = options_data();
     $data['menus'] = menu_data();
-    $data['pages'] = page_data();
-    $data['project'] = cpt_projects();
+    $data['posts'] = array(
+      'pages' => page_data(),
+      'project' => cpt_projects(),
+    );
     return $data;
   }
   function api_setup_endpoints() {

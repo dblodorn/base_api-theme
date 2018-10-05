@@ -5,13 +5,18 @@
       $data = array();
       foreach( $posts as $p ):
         $p_data = get_post($p->ID);
-        $p_type = $p_data->post_type;
         $data[] = array(
           'post_id' => $p_data->ID,
           'slug' => $p_data->post_name,
           'title' => get_the_title($p_data),
-          'thumbnail' => get_the_post_thumbnail_url($p->ID),
           'post_type' => $p_data->post_type,
+          'thumbnail' => get_the_post_thumbnail_url($p->ID),
+          'taxonomies' => array(
+            'category' => return_taxonomy_array($p, 'category'),
+            'capabilities' => return_taxonomy_array($p, 'capability'),
+            'client' => return_taxonomy_array($p, 'client'),
+            'industry' => return_taxonomy_array($p, 'industry'),
+          )
         );
       endforeach;
     endif;
