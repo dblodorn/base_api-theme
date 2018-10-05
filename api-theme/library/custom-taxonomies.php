@@ -94,36 +94,6 @@ add_action( 'init', 'industry_taxonomy', 30 );
   register_taxonomy( 'industry', array( 'project' ), $args );
 }
 
-// Project Type taxonomy
-add_action( 'init', 'type_taxonomy', 30 );
-  function type_taxonomy() {
-  $labels = array(
-    'name'                  => _x( 'Project Page Type', 'taxonomy general name' ),
-    'singular_name'         => _x( 'Project Page Type', 'taxonomy singular name' ),
-    'search_items'          => __( 'Search Project Page Types' ),
-    'all_items'             => __( 'All Project Page Types' ),
-    'parent_item'           => __( 'Parent Project Page Type' ),
-    'parent_item_colon'     => __( 'Parent Project Page Type:' ),
-    'edit_item'             => __( 'Edit Project Page Types' ),
-    'update_item'           => __( 'Update Project Page Type' ),
-    'add_new_item'          => __( 'Add New Project Page Type' ),
-    'new_item_name'         => __( 'New Project Page Types Name' ),
-    'menu_name'             => __( 'Project Page Type' ),
-  );
-  $args = array(
-    'hierarchical'          => true,
-    'labels'                => $labels,
-    'show_ui'               => true,
-    'show_admin_column'     => true,
-    'query_var'             => true,
-    'rewrite'               => array( 'slug' => 'project-type' ),
-    'show_in_rest'          => true,
-    'rest_base'             => 'project-type-taxonomy-api',
-    'rest_controller_class' => 'WP_REST_Terms_Controller',
-  );
-  register_taxonomy( 'project-type', array( 'project' ), $args );
-}
-
 //-------------------------------------------------------------------
 // CUSTOM TAXONOMY FILTER DROPDOWNS IN ADMIN
 //-------------------------------------------------------------------
@@ -157,14 +127,9 @@ function filter_project_capability() {
   tsm_filter_post_type_by_taxonomy('project', 'capability');
 }
 
-function filter_project_type() {
-  tsm_filter_post_type_by_taxonomy('project', 'project-type');
-}
-
 add_action('restrict_manage_posts', 'filter_project_client');
 add_action('restrict_manage_posts', 'filter_project_industry');
 add_action('restrict_manage_posts', 'filter_project_capability');
-add_action('restrict_manage_posts', 'filter_project_type');
 
 // NEXT
 function tsm_convert_id_to_term_in_query_client($query) {
@@ -200,20 +165,8 @@ function tsm_convert_id_to_term_in_query_capability($query) {
 	}
 }
 
-function tsm_convert_id_to_term_in_query_type($query) {
-	global $pagenow;
-	$post_type = 'project';
-	$taxonomy  = 'project-type';
-	$q_vars    = &$query->query_vars;
-	if ( $pagenow == 'edit.php' && isset($q_vars['post_type']) && $q_vars['post_type'] == $post_type && isset($q_vars[$taxonomy]) && is_numeric($q_vars[$taxonomy]) && $q_vars[$taxonomy] != 0 ) {
-		$term = get_term_by('id', $q_vars[$taxonomy], $taxonomy);
-		$q_vars[$taxonomy] = $term->slug;
-	}
-}
-
 add_filter('parse_query', 'tsm_convert_id_to_term_in_query_client');
 add_filter('parse_query', 'tsm_convert_id_to_term_in_query_industry');
 add_filter('parse_query', 'tsm_convert_id_to_term_in_query_capability');
-add_filter('parse_query', 'tsm_convert_id_to_term_in_query_type');
 
 ?>

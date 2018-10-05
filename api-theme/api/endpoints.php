@@ -5,7 +5,7 @@
     $data['options'] = options_data();
     $data['menus'] = menu_data();
     $data['pages'] = page_data();
-    $data['projects'] = cpt_projects();
+    $data['project'] = cpt_projects();
     return $data;
   }
   function api_setup_endpoints() {

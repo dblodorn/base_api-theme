@@ -39,7 +39,7 @@ function project_cpt() {
     'query_var'          => true,
     'rewrite'            => array( 'slug' => 'projects' ),
     'capability_type'    => 'post',
-    'taxonomies'         => array('project-type', 'capability', 'client', 'industry', 'category'),
+    'taxonomies'         => array('capability', 'client', 'industry', 'category'),
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => null,
