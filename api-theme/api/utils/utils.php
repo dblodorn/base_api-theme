@@ -79,6 +79,20 @@
     }
   }
 
+  function acf_gallery($images) {
+    if ( $images ) {
+      foreach ($images as $image) {
+        $img = array(
+          'image' => return_image($image)
+        );
+        $imgArray[] = $img;
+      }
+      return $imgArray;
+    } else {
+      return false;
+    }
+  }
+
   function returnGallery($has, $gallery) {
     $has_gallery = get_sub_field($has);
     if ($has_gallery) {

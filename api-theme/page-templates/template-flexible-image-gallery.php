@@ -11,21 +11,8 @@
 
 <?php /* if ( have_rows( 'image_gallery' ) ): ?>
 	<?php while ( have_rows( 'image_gallery' ) ) : the_row(); ?>
-		<?php if ( get_row_layout() == 'single_image_popup' ) : ?>
+		<?php if ( get_row_layout() == 'slideshow' ) : ?>
 			<?php the_sub_field( 'headline' ); ?>
-			<?php the_sub_field( 'columns' ); ?>
-			<?php the_sub_field( 'image_style' ); ?>
-			<?php $images_images = get_sub_field( 'images' ); ?>
-			<?php if ( $images_images ) :  ?>
-				<?php foreach ( $images_images as $images_image ): ?>
-					<a href="<?php echo $images_image['url']; ?>">
-						<img src="<?php echo $images_image['sizes']['thumbnail']; ?>" alt="<?php echo $images_image['alt']; ?>" />
-					</a>
-				<p><?php echo $images_image['caption']; ?></p>
-				<?php endforeach; ?>
-			<?php endif; ?>
-			<?php the_sub_field( 'proportion' ); ?>
-		<?php elseif ( get_row_layout() == 'slideshow' ) : ?>
 			<?php if ( have_rows( 'slides' ) ) : ?>
 				<?php while ( have_rows( 'slides' ) ) : the_row(); ?>
 					<?php the_sub_field( 'slide_type' ); ?>
@@ -48,6 +35,31 @@
 			<?php else : ?>
 				<?php // no rows found ?>
 			<?php endif; ?>
+		<?php elseif ( get_row_layout() == 'simple_slideshow' ) : ?>
+			<?php the_sub_field( 'headline' ); ?>
+			<?php $images_images = get_sub_field( 'images' ); ?>
+			<?php if ( $images_images ) :  ?>
+				<?php foreach ( $images_images as $images_image ): ?>
+					<a href="<?php echo $images_image['url']; ?>">
+						<img src="<?php echo $images_image['sizes']['thumbnail']; ?>" alt="<?php echo $images_image['alt']; ?>" />
+					</a>
+				<p><?php echo $images_image['caption']; ?></p>
+				<?php endforeach; ?>
+			<?php endif; ?>
+		<?php elseif ( get_row_layout() == 'single_image_popup' ) : ?>
+			<?php the_sub_field( 'headline' ); ?>
+			<?php the_sub_field( 'columns' ); ?>
+			<?php the_sub_field( 'image_style' ); ?>
+			<?php $images_images = get_sub_field( 'images' ); ?>
+			<?php if ( $images_images ) :  ?>
+				<?php foreach ( $images_images as $images_image ): ?>
+					<a href="<?php echo $images_image['url']; ?>">
+						<img src="<?php echo $images_image['sizes']['thumbnail']; ?>" alt="<?php echo $images_image['alt']; ?>" />
+					</a>
+				<p><?php echo $images_image['caption']; ?></p>
+				<?php endforeach; ?>
+			<?php endif; ?>
+			<?php the_sub_field( 'proportion' ); ?>
 		<?php elseif ( get_row_layout() == 'slideshow_popup' ) : ?>
 			<?php the_sub_field( 'headline' ); ?>
 			<?php the_sub_field( 'columns' ); ?>
@@ -87,6 +99,7 @@
 			<?php endif; ?>
 			<?php the_sub_field( 'proportion' ); ?>
 		<?php elseif ( get_row_layout() == 'video_embed' ) : ?>
+			<?php the_sub_field( 'headline' ); ?>
 			<?php the_sub_field( 'video' ); ?>
 			<?php $video_cover_image = get_sub_field( 'video_cover_image' ); ?>
 			<?php if ( $video_cover_image ) { ?>
@@ -94,6 +107,7 @@
 			<?php } ?>
 			<?php the_sub_field( 'video_caption' ); ?>
 		<?php elseif ( get_row_layout() == 'video_embed_file' ) : ?>
+			<?php the_sub_field( 'headline' ); ?>
 			<?php $video_file = get_sub_field( 'video_file' ); ?>
 			<?php if ( $video_file ) { ?>
 				<a href="<?php echo $video_file['url']; ?>"><?php echo $video_file['filename']; ?></a>
