@@ -2,7 +2,8 @@
   function portfolio_item_template($p){
     return array(
       'id' => $p->ID,
-      'wp_content' => $p->post_content
+      'short_description' => get_field('short_description', $p->ID),
+      'description' => get_field('description', $p->ID),
     );
   }
 ?>

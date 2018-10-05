@@ -90,6 +90,7 @@
   function flexible_image_gallery_template($p){
     $flex_layout = get_field('image_gallery', $p->ID);
     return array(
+      'short_description' => get_field('short_description', $p->ID),
       'description' => get_field('description', $p->ID),
       'layout' => flex_content_image_gallery($p)
     );

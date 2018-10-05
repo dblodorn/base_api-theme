@@ -38,6 +38,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_5bb6bf2f97160",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "wpautop"
+        },
+        {
             "key": "field_588f6b8a50a6a",
             "label": "Project Photo",
             "name": "project_photo",
@@ -301,5 +320,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1538682684
+    "modified": 1538703493
 }
