@@ -66,6 +66,35 @@
             "return_format": "object"
         },
         {
+            "key": "field_5bb7d221c0abf",
+            "label": "Columns",
+            "name": "columns",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "one_col": "One Column",
+                "two_col": "Two Column",
+                "three_col": "Three Column",
+                "four_col": "Four Column"
+            },
+            "default_value": [
+                "one_col"
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5bb7d1cac0abc",
             "label": "Show Thumbnail",
             "name": "show_thumbnail",
@@ -83,6 +112,35 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_5bb81ea272d4b",
+            "label": "Thumbnail Proportion",
+            "name": "thumbnail_proportion",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bb7d1cac0abc",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 1,
+            "placeholder": 1,
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
         },
         {
             "key": "field_5bb7d1dfc0abd",
@@ -121,35 +179,6 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
-        },
-        {
-            "key": "field_5bb7d221c0abf",
-            "label": "Columns",
-            "name": "columns",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "one_col": "One Column",
-                "two_col": "Two Column",
-                "three_col": "Three Column",
-                "four_col": "Four Column"
-            },
-            "default_value": [
-                "one_col"
-            ],
-            "allow_null": 1,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
         }
     ],
     "location": [
@@ -179,5 +208,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1538773686
+    "modified": 1538793194
 }
