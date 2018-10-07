@@ -54,7 +54,7 @@ if( function_exists('acf_add_options_page') ) {
     'menu_slug' 	=> 'site-content',
     'capability' 	=> 'edit_posts', 
     'icon_url' => 'dashicons-welcome-view-site',
-    'position' => 2
+    'position' => 30
   ));
 }
 

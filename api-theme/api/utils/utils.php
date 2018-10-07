@@ -1,7 +1,8 @@
 <?php
   function return_image($image){
     $formatImg = array(
-      'large' => $image['sizes']['large'],
+      'large' => $image['url'],
+      'medium' => $image['sizes']['large'],
       'small' => $image['sizes']['medium'],
       'id' => $image['ID']
     );
@@ -66,20 +67,6 @@
 
   function basic_gallery($field){
     $images = get_field($field, $p->ID);
-    if ( $images ) {
-      foreach ($images as $image) {
-        $img = array(
-          'image' => return_image($image)
-        );
-        $imgArray[] = $img;
-      }
-      return $imgArray;
-    } else {
-      return false;
-    }
-  }
-
-  function acf_gallery($images) {
     if ( $images ) {
       foreach ($images as $image) {
         $img = array(

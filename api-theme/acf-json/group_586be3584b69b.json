@@ -19,68 +19,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_5bb6620b7df2c",
-            "label": "Short Description",
-            "name": "short_description",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5bb6bf2f97160",
-            "label": "Description",
-            "name": "description",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 4,
-            "new_lines": "wpautop"
-        },
-        {
-            "key": "field_588f6b8a50a6a",
-            "label": "Project Photo",
-            "name": "project_photo",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_586be35d44b67",
             "label": "Project Description",
             "name": "project_description",
@@ -320,5 +258,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1538703493
+    "modified": 1538856586
 }

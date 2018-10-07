@@ -3,44 +3,6 @@
     "title": "Post Collection",
     "fields": [
         {
-            "key": "field_5bb6bee6b8ec1",
-            "label": "Short Description",
-            "name": "short_description",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5bb6bed2a90fe",
-            "label": "Description",
-            "name": "description",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 4,
-            "new_lines": "wpautop"
-        },
-        {
             "key": "field_5bb65f24c4583",
             "label": "Post Collection",
             "name": "post_collection",
@@ -208,5 +170,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1538793194
+    "modified": 1538856622
 }

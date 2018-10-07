@@ -27,9 +27,6 @@
   function post_collection_template($p){
     $post_collection = get_field('post_collection', $p->ID);
     return array(
-      'id' => $p->ID,
-      'short_description' => get_field('short_description', $p->ID),
-      'description' => get_field('description', $p->ID),
       'show_thumbnail' => get_field('show_thumbnail', $p->ID),
       'show_taxonomies' => get_field('show_taxonomies', $p->ID),
       'show_post_taxonomies' => get_field('show_post_taxonomies', $p->ID),

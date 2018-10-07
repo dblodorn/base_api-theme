@@ -7,6 +7,7 @@
     $data['posts'] = array(
       'pages' => page_data(),
       'project' => cpt_projects(),
+      'video' => cpt_videos(),
     );
     return $data;
   }

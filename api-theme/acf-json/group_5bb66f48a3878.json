@@ -1,27 +1,7 @@
 {
     "key": "group_5bb66f48a3878",
     "title": "Home Template",
-    "fields": [
-        {
-            "key": "field_5bb66f56e8bdc",
-            "label": "Home Page Text",
-            "name": "home_page_text",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        }
-    ],
+    "fields": false,
     "location": [
         [
             {
@@ -44,13 +24,11 @@
         "revisions",
         "slug",
         "author",
-        "format",
-        "featured_image",
         "categories",
         "tags",
         "send-trackbacks"
     ],
     "active": 1,
     "description": "",
-    "modified": 1538682877
+    "modified": 1538856543
 }
