@@ -5,9 +5,9 @@
     $data['menus'] = menu_data();
     $data['posts'] = array(
       'pages' => page_data(),
-      'project' => cpt_projects(),
-      'video' => cpt_videos(),
-      'instagram' => cpt_instagram(),
+      'project' => all_posts('project'),
+      'video' => all_posts('video'),
+      'instagram' => all_posts('instagram_post'),
     );
     $data['options'] = options_data();
     return $data;

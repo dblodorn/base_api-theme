@@ -779,6 +779,104 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_5bbbb8d198246": {
+                    "key": "layout_5bbbb8d198246",
+                    "name": "wysiwig_content",
+                    "label": "Wysiwig Content",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5bbbb8ef98247",
+                            "label": "Wysiwig",
+                            "name": "wysiwig",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5bbbba344fa85",
+                            "label": "Wysiwig Width",
+                            "name": "wysiwig_width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "full_width": "Full Width",
+                                "max_large": "Max Width Large",
+                                "max_medium": "Max Width Medium",
+                                "max_small": "Max Width Small"
+                            },
+                            "default_value": [
+                                "full_width"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5bbbb9ffc149b",
+                            "label": "Wysiwig Position",
+                            "name": "wysiwig_position",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5bba5d215abb1",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "centered": "Centered",
+                                "centered_right": "Centered Right",
+                                "top_right": "Top Right",
+                                "top_left": "Top Left",
+                                "centered_left": "Centered Left",
+                                "bottom_left": "Bottom Left",
+                                "bottom_right": "Bottom Right"
+                            },
+                            "default_value": [
+                                "centered"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "5af34b52a01d2": {
                     "key": "5af34b52a01d2",
                     "name": "image_grid_popup",
@@ -803,6 +901,35 @@
                                 "slideshow": "Slideshow Popup"
                             },
                             "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5bbbbab34fa86",
+                            "label": "Image Grid Width",
+                            "name": "ig_width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "full_width": "Full Width",
+                                "max_large": "Max Width Large",
+                                "max_medium": "Max Width Medium",
+                                "max_small": "Max Width Small"
+                            },
+                            "default_value": [
+                                "full_width"
+                            ],
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
@@ -949,6 +1076,35 @@
                             "ui": 0,
                             "ajax": 0,
                             "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5bbbbaeb4fa87",
+                            "label": "Popup Grid Width",
+                            "name": "propup_grid_width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "full_width": "Full Width",
+                                "max_large": "Max Width Large",
+                                "max_medium": "Max Width Medium",
+                                "max_small": "Max Width Small"
+                            },
+                            "default_value": [
+                                "full_width"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -1283,5 +1439,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539020578
+    "modified": 1539030065
 }

@@ -52,11 +52,11 @@ function project_cpt() {
   register_post_type( 'project', $args );
 }
 
-add_action( 'init', 'video_cpt' );
-
 //-------------------------------------------------------------------
 // CUSTOM POST TYPE: PROJECT
 //-------------------------------------------------------------------
+
+add_action( 'init', 'video_cpt' );
 
 function video_cpt() {
   $labels = array(

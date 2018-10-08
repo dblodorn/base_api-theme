@@ -27,12 +27,18 @@
   function post_collection_template($p){
     $post_collection = get_field('post_collection', $p->ID);
     return array(
+      'insert_type' => get_field('insert_type', $p->ID),
+      'post_type' => get_field('post_type', $p->ID),
+      'popup_grid' => get_field('popup_grid', $p->ID),
+      'columns' => get_field('columns', $p->ID),
+      'link_button' => get_field('link_button', $p->ID),
+      'show_title' => get_field('show_title', $p->ID),
       'show_thumbnail' => get_field('show_thumbnail', $p->ID),
       'show_taxonomies' => get_field('show_taxonomies', $p->ID),
       'show_post_taxonomies' => get_field('show_post_taxonomies', $p->ID),
       'thumbnail_proportion' => get_field('thumbnail_proportion', $p->ID),
-      'popup_grid' => get_field('popup_grid', $p->ID),
-      'columns' => get_field('columns', $p->ID),
+      'style' => get_field('layout_style', $p->ID),
+      'container_width' => get_field('container_width', $p->ID),
       'post_collection' => get_project_list('post_collection', $p)
     );
   }

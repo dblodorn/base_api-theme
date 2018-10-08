@@ -47,5 +47,5 @@
     endif;
     return $data;
   }
-  
+
 ?>

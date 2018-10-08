@@ -127,6 +127,15 @@
       'caption' => get_sub_field( 'video_caption' ),
     );
   }
+
+  function return_wysiwig_content() {
+    return array (
+      'module' => 'wysiwig_content',
+      'wysiwig' => get_sub_field('wysiwig'),
+      'wysiwig_width' => get_sub_field('wysiwig_width'),
+      'wysiwig_position' => get_sub_field('wysiwig_position'),
+    );
+  }
   
   function flex_content_image_gallery($p){
     $fc_image_gallery = array();
@@ -144,6 +153,8 @@
           $data = return_video_embed();
         elseif(get_row_layout() == 'video_embed_file'):
           $data = return_video_embed_file();
+        elseif(get_row_layout() == 'wysiwig_content'):
+          $data = return_wysiwig_content();
         endif;
         $fc_image_gallery[] = $data;
       endwhile;
