@@ -5,7 +5,6 @@
       $data = array();
       foreach( $posts as $p ):
         $p_data = get_post($p->ID);
-        $photo = get_field('video_cover', $p->ID);
         $data[] = array(
           'post_id' => $p_data->ID,
           'slug' => $p_data->post_name,
@@ -13,7 +12,7 @@
           'post_type' => $p_data->post_type,
           'thumbnail' => get_the_post_thumbnail_url($p->ID),
           'video_url' => get_field('video_url', $p->ID, false, false),
-          'video_cover' => return_image($photo),
+          'video_cover' => get_field('video_cover_image', $p->ID),
         );
       endforeach;
     endif;

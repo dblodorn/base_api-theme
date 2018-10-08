@@ -43,11 +43,10 @@
                 "id": ""
             },
             "choices": {
-                "col_one": "One Column",
-                "col_one_wide": "One Column Wide",
-                "col_two": "Two Column",
-                "col_three": "Three Column",
-                "col_four": "Four Column"
+                "one_col": "One Column",
+                "two_col": "Two Column",
+                "three_col": "Three Column",
+                "four_col": "Four Column"
             },
             "default_value": [
                 "col_two"
@@ -115,5 +114,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1538885048
+    "modified": 1538895266
 }

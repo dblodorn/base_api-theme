@@ -30,6 +30,7 @@
       'show_thumbnail' => get_field('show_thumbnail', $p->ID),
       'show_taxonomies' => get_field('show_taxonomies', $p->ID),
       'show_post_taxonomies' => get_field('show_post_taxonomies', $p->ID),
+      'thumbnail_proportion' => get_field('thumbnail_proportion', $p->ID),
       'columns' => get_field('columns', $p->ID),
       'post_collection' => get_project_list('post_collection', $p)
     );

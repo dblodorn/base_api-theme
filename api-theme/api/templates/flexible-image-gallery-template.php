@@ -21,6 +21,10 @@
     return array (
       'module' => 'simple_slideshow',
       'is_hero' => get_sub_field( 'is_hero' ),
+      'controls' => get_sub_field( 'controls' ),
+      'pagination' => get_sub_field( 'pagination' ),
+      'autoplay' => get_sub_field( 'autoplay' ),
+      'captions' => get_sub_field( 'captions' ),
       'slides' => simple_slideshow_gallery($images),
     );
   }
@@ -42,6 +46,10 @@
           'bg_color' => get_sub_field( 'background_color' ),
           'text_color' => get_sub_field( 'text_color' ),
           'theme' => get_sub_field( 'theme' ),
+          'controls' => get_sub_field( 'controls' ),
+          'pagination' => get_sub_field( 'pagination' ),
+          'autoplay' => get_sub_field( 'autoplay' ),
+          'captions' => get_sub_field( 'captions' ),
         );
       endwhile;
     endif;
@@ -116,9 +124,16 @@
     endif;
   }
 
+  function return_text_overlay() {
+
+  }
+
   function flexible_image_gallery_template($p){
     $flex_layout = get_field('image_gallery', $p->ID);
     return array(
+      'has_text_overlay' => get_field( 'has_text_overlay', $p->ID),
+      'text_overlay_content' => get_field( 'text_overlay_content', $p->ID),
+      'text_overlay_postion' => get_field( 'text_overlay_position', $p->ID),
       'layout' => flex_content_image_gallery($p)
     );
   }

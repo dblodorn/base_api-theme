@@ -19,25 +19,6 @@
             "height": ""
         },
         {
-            "key": "field_5bb923cbf2e76",
-            "label": "Add Custom Cover Image",
-            "name": "add_cover_image",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_5bb9220452082",
             "label": "Video Cover Image",
             "name": "video_cover_image",
@@ -47,9 +28,8 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5bb923cbf2e76",
-                        "operator": "==",
-                        "value": "1"
+                        "field": "field_5bb921e252081",
+                        "operator": "!=empty"
                     }
                 ]
             ],
@@ -58,7 +38,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "url",
             "preview_size": "thumbnail",
             "library": "all",
             "min_width": "",
@@ -87,5 +67,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1538860014
+    "modified": 1538957809
 }
