@@ -24,6 +24,7 @@
       'id' => $p->ID,
       'columns' => get_field('columns', $p->ID),
       'permalink' => get_field('permalink', $p->ID),
+      'popup' => get_field('popup', $p->ID),
       'proportion' => get_field('proportion', $p->ID),
       'video_collection' => get_video_list('video_collection', $p)
     );

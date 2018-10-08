@@ -5,8 +5,22 @@
       foreach ($images as $image) {
         $img = array(
           'image' => return_image($image),
-          'style' => 'cover',
           'slide_type' => 'image'
+        );
+        $imgArray[] = $img;
+      }
+      return $imgArray;
+    } else {
+      return false;
+    }
+  }
+
+  function return_image_grid($images) {
+    if ($images) {
+      foreach ($images as $image) {
+        $img = array(
+          'image' => return_image($image),
+          'style' => 'cover',
         );
         $imgArray[] = $img;
       }
@@ -22,9 +36,14 @@
       'module' => 'simple_slideshow',
       'is_hero' => get_sub_field( 'is_hero' ),
       'controls' => get_sub_field( 'controls' ),
+      'has_text_overlay' => get_sub_field( 'has_text_overlay'),
+      'text_overlay_content' => get_sub_field( 'text_overlay_content'),
+      'text_overlay_postion' => get_sub_field( 'text_overlay_position'),
       'pagination' => get_sub_field( 'pagination' ),
       'autoplay' => get_sub_field( 'autoplay' ),
       'captions' => get_sub_field( 'captions' ),
+      'transition_time' => get_sub_field( 'transition_time' ),
+      'image_style' => get_sub_field('image_style'),
       'slides' => simple_slideshow_gallery($images),
     );
   }
@@ -37,19 +56,14 @@
         $photo = get_sub_field( 'photo' );
         $images[] = array(
           'image' => return_image($photo),
-          'style' => 'cover',
-          'video' => get_sub_field( 'video_file' ),
-          'video_embed' => get_sub_field( 'video_embed' ),
           'slide_type' => get_sub_field('slide_type'),
+          'image_style' => get_sub_field('image_style'),
+          'video' => get_sub_field( 'video_file' ),
           'text' => get_sub_field( 'text' ),
           'has_bg_color' => get_sub_field( 'add_background_color' ),
           'bg_color' => get_sub_field( 'background_color' ),
           'text_color' => get_sub_field( 'text_color' ),
           'theme' => get_sub_field( 'theme' ),
-          'controls' => get_sub_field( 'controls' ),
-          'pagination' => get_sub_field( 'pagination' ),
-          'autoplay' => get_sub_field( 'autoplay' ),
-          'captions' => get_sub_field( 'captions' ),
         );
       endwhile;
     endif;
@@ -59,20 +73,35 @@
   function return_slideshow() {
     return array (
       'module' => 'slideshow',
+      'has_text_overlay' => get_sub_field( 'has_text_overlay'),
+      'text_overlay_content' => get_sub_field( 'text_overlay_content'),
       'is_hero' => get_sub_field('is_hero'),
+      'text_overlay_postion' => get_sub_field( 'text_overlay_position'),
+      'controls' => get_sub_field( 'controls' ),
+      'pagination' => get_sub_field( 'pagination' ),
+      'autoplay' => get_sub_field( 'autoplay' ),
+      'captions' => get_sub_field( 'captions' ),
+      'transition_time' => get_sub_field( 'transition_time' ),
       'slides' => full_slideshow()
     );
   }
 
   function return_image_grid_popup() {
+    $images = get_sub_field( 'images' );
     return array (
       'module' => 'image_grid_popup',
+      'proportion' => get_sub_field('proportion'),
+      'popup_type' => get_sub_field('popup_type'),
+      'columns' => get_sub_field('columns'),
+      'image_style' => get_sub_field('image_style'),
+      'images' => return_image_grid($images)
     );
   }
 
   function return_details_popup() {
     return array (
       'module' => 'details_popup',
+      'images' => get_sub_field('proportion'),
     );
   }
 
@@ -129,11 +158,8 @@
   }
 
   function flexible_image_gallery_template($p){
-    $flex_layout = get_field('image_gallery', $p->ID);
+    $flex_layout = get_field('layout_modules', $p->ID);
     return array(
-      'has_text_overlay' => get_field( 'has_text_overlay', $p->ID),
-      'text_overlay_content' => get_field( 'text_overlay_content', $p->ID),
-      'text_overlay_postion' => get_field( 'text_overlay_position', $p->ID),
       'layout' => flex_content_image_gallery($p)
     );
   }

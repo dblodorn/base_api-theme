@@ -94,6 +94,36 @@ add_action( 'init', 'industry_taxonomy', 30 );
   register_taxonomy( 'industry', array( 'project' ), $args );
 }
 
+// Type taxonomy
+add_action( 'init', 'instagram_tag', 30 );
+  function instagram_tag() {
+  $labels = array(
+    'name'                  => _x( 'Instgram Tag', 'taxonomy general name' ),
+    'singular_name'         => _x( 'Instgram Tag', 'taxonomy singular name' ),
+    'search_items'          => __( 'Search Instgram Tags' ),
+    'all_items'             => __( 'All Instgram Tags' ),
+    'parent_item'           => __( 'Parent Instgram Tag' ),
+    'parent_item_colon'     => __( 'Parent Instgram Tag:' ),
+    'edit_item'             => __( 'Edit Instgram Tags' ),
+    'update_item'           => __( 'Update Instgram Tag' ),
+    'add_new_item'          => __( 'Add New Instgram Tag' ),
+    'new_item_name'         => __( 'New Instgram Tags Name' ),
+    'menu_name'             => __( 'Instgram Tag' ),
+  );
+  $args = array(
+    'hierarchical'          => true,
+    'labels'                => $labels,
+    'show_ui'               => true,
+    'show_admin_column'     => true,
+    'query_var'             => true,
+    'rewrite'               => array( 'slug' => 'instagram-tag' ),
+    'show_in_rest'          => true,
+    'rest_base'             => 'instagram-tag-api',
+    'rest_controller_class' => 'WP_REST_Terms_Controller',
+  );
+  register_taxonomy( 'instagram_tag', array( 'instagram_post' ), $args );
+}
+
 //-------------------------------------------------------------------
 // CUSTOM TAXONOMY FILTER DROPDOWNS IN ADMIN
 //-------------------------------------------------------------------
@@ -127,9 +157,14 @@ function filter_project_capability() {
   tsm_filter_post_type_by_taxonomy('project', 'capability');
 }
 
+function filter_tag() {
+  tsm_filter_post_type_by_taxonomy('instagram_post', 'instagram_tag');
+}
+
 add_action('restrict_manage_posts', 'filter_project_client');
 add_action('restrict_manage_posts', 'filter_project_industry');
 add_action('restrict_manage_posts', 'filter_project_capability');
+add_action('restrict_manage_posts', 'filter_tag');
 
 // NEXT
 function tsm_convert_id_to_term_in_query_client($query) {
@@ -165,8 +200,20 @@ function tsm_convert_id_to_term_in_query_capability($query) {
 	}
 }
 
+function tsm_convert_id_to_term_in_query_ig($query) {
+	global $pagenow;
+	$post_type = 'instagram_post';
+	$taxonomy  = 'instagram_tag';
+	$q_vars    = &$query->query_vars;
+	if ( $pagenow == 'edit.php' && isset($q_vars['post_type']) && $q_vars['post_type'] == $post_type && isset($q_vars[$taxonomy]) && is_numeric($q_vars[$taxonomy]) && $q_vars[$taxonomy] != 0 ) {
+		$term = get_term_by('id', $q_vars[$taxonomy], $taxonomy);
+		$q_vars[$taxonomy] = $term->slug;
+	}
+}
+
 add_filter('parse_query', 'tsm_convert_id_to_term_in_query_client');
 add_filter('parse_query', 'tsm_convert_id_to_term_in_query_industry');
 add_filter('parse_query', 'tsm_convert_id_to_term_in_query_capability');
+add_filter('parse_query', 'tsm_convert_id_to_term_in_query_ig');
 
 ?>

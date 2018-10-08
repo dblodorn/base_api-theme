@@ -7,6 +7,7 @@
       'id' => $post->ID,
       'title' => $post->post_title,
       'slug' => $post->post_name,
+      'thumbnail' => get_the_post_thumbnail_url($post->ID),
       'is_home' => return_home($permalink),
       'template' => $template_name,
       'top_content' => get_field('show_top_content', $post->ID),

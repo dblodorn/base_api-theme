@@ -57,6 +57,25 @@
             "placeholder": ""
         },
         {
+            "key": "field_5bbb90939183b",
+            "label": "Popup Grid",
+            "name": "popup_grid",
+            "type": "true_false",
+            "instructions": "Make an image grid of popups from post featured image. Must Have Show Thumbnail Selected",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5bb7d1cac0abc",
             "label": "Show Thumbnail",
             "name": "show_thumbnail",
@@ -70,7 +89,7 @@
                 "id": ""
             },
             "message": "",
-            "default_value": 0,
+            "default_value": 1,
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
@@ -96,8 +115,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 1,
-            "placeholder": 1,
+            "default_value": 100,
+            "placeholder": 100,
             "prepend": "",
             "append": "",
             "min": "",
@@ -130,7 +149,15 @@
             "type": "true_false",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bbb90939183b",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -170,5 +197,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1538856622
+    "modified": 1539019426
 }
