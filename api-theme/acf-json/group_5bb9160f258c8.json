@@ -68,6 +68,35 @@
             "delay": 0
         },
         {
+            "key": "field_5bbbc2a4e3911",
+            "label": "Top Container Width",
+            "name": "top_container_width",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "full_width": "Full Width",
+                "max_large": "Max Width Large",
+                "max_medium": "Max Width Medium",
+                "max_small": "Max Width Small"
+            },
+            "default_value": [
+                "full_width"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5bb93d7549a64",
             "label": "Theme",
             "name": "theme",
@@ -141,5 +170,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539009744
+    "modified": 1539032189
 }

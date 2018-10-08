@@ -37,7 +37,7 @@
       'show_taxonomies' => get_field('show_taxonomies', $p->ID),
       'show_post_taxonomies' => get_field('show_post_taxonomies', $p->ID),
       'thumbnail_proportion' => get_field('thumbnail_proportion', $p->ID),
-      'style' => get_field('layout_style', $p->ID),
+      'style' => get_field('style', $p->ID),
       'container_width' => get_field('container_width', $p->ID),
       'post_collection' => get_project_list('post_collection', $p)
     );

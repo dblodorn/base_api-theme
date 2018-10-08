@@ -26,7 +26,7 @@
       'permalink' => get_field('permalink', $p->ID),
       'popup' => get_field('popup', $p->ID),
       'proportion' => get_field('proportion', $p->ID),
-      'container_width' => get_field('container_width', $p->ID),
+      'container_width' => get_field('video_grid_width', $p->ID),
       'video_collection' => get_video_list('video_collection', $p)
     );
   }
