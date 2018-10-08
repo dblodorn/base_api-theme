@@ -137,10 +137,9 @@
         "comments",
         "revisions",
         "slug",
-        "featured_image",
         "send-trackbacks"
     ],
     "active": 1,
     "description": "",
-    "modified": 1538866578
+    "modified": 1539009744
 }
