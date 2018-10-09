@@ -1350,7 +1350,8 @@
                             },
                             "choices": {
                                 "video_embed": "Video Embed",
-                                "video_file": "Video File"
+                                "video_file": "Video File",
+                                "photo": "Photo"
                             },
                             "default_value": [],
                             "allow_null": 0,
@@ -1472,5 +1473,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539119909
+    "modified": 1539123725
 }
