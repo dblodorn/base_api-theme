@@ -225,9 +225,9 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5bbbb406373af",
-            "label": "Link Button",
-            "name": "link_button",
+            "key": "field_5bbce60812e30",
+            "label": "Link Wrapper",
+            "name": "link_wrapper",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -242,6 +242,111 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_5bbbb406373af",
+            "label": "Link Button",
+            "name": "link_button",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bbce60812e30",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5bbce58012e2d",
+            "label": "External Link Button",
+            "name": "external_link_button",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bbce60812e30",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5bbce5a612e2e",
+            "label": "External Link",
+            "name": "external_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bbce58012e2d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5bbce5c612e2f",
+            "label": "External Link Cta",
+            "name": "external_link_cta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bbce58012e2d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5bb7d1cac0abc",
@@ -264,7 +369,7 @@
         },
         {
             "key": "field_5bb81ea272d4b",
-            "label": "Thumbnail Proportion",
+            "label": "Thumbnail Proportion Desktop",
             "name": "thumbnail_proportion",
             "type": "number",
             "instructions": "",
@@ -290,6 +395,62 @@
             "min": "",
             "max": "",
             "step": ""
+        },
+        {
+            "key": "field_5bbce51d12e2c",
+            "label": "Thumbnail Proportion Mobile",
+            "name": "thumbnail_proportion_mobile",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bb7d1cac0abc",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 99,
+            "placeholder": 99,
+            "prepend": "",
+            "append": "",
+            "min": 10,
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5bbcecb312ebc",
+            "label": "Thumbnail Proportion Max",
+            "name": "thumbnail_proportion_max",
+            "type": "text",
+            "instructions": "Clamp max height on large desktop heros",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bb7d1cac0abc",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5bb7d1dfc0abd",
@@ -365,5 +526,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539030136
+    "modified": 1539108062
 }
