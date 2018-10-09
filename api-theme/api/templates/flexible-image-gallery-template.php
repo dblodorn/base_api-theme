@@ -126,25 +126,19 @@
     );
   }
 
-  function return_video_embed() {
-    $video_cover_image = get_sub_field( 'video_cover_image' );
-    return array (
-      'module' => 'video_embed',
-      'is_hero' => get_sub_field('is_hero'),
-      'video_embed' => get_sub_field( 'video' ),
-      'video_cover_image' => return_image($video_cover_image),
-      'caption' => get_sub_field( 'video_caption' ),
-    );
-  }
-
-  function return_video_embed_file() {
+  function return_single_video_photo() {
     $video_file = get_sub_field( 'video_file' );
-    $video_cover_image = get_sub_field( 'video_cover_image' );
+    $image = get_sub_field( 'cover_image' );
     return array (
-      'module' => 'video_embed_file',
+      'module' => 'single_video_photo',
+      'has_text_overlay' => get_sub_field( 'svp_has_text_overlay'),
+      'text_overlay_content' => get_sub_field( 'svp_text_overlay_content'),
+      'text_overlay_postion' => get_sub_field( 'svp_text_overlay_position'),
       'is_hero' => get_sub_field('is_hero'),
+      'media_type' => get_sub_field('media_type'),
+      'video_embed' => get_sub_field('video_embed', false, false),
       'video_file' => $video_file['url'],
-      'video_cover_image' => return_image($video_cover_image),
+      'video_cover_image' => return_image($image),
       'caption' => get_sub_field( 'video_caption' ),
     );
   }
@@ -170,10 +164,8 @@
           $data = return_image_grid_popup();
         elseif(get_row_layout() == 'details_popup'):
           $data = return_details_popup();
-        elseif(get_row_layout() == 'video_embed'):
-          $data = return_video_embed();
-        elseif(get_row_layout() == 'video_embed_file'):
-          $data = return_video_embed_file();
+        elseif(get_row_layout() == 'single_video_photo'):
+          $data = return_single_video_photo();
         elseif(get_row_layout() == 'wysiwig_content'):
           $data = return_wysiwig_content();
         endif;
