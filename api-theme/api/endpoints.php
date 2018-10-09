@@ -5,9 +5,9 @@
     $data['menus'] = menu_data();
     $data['posts'] = array(
       'pages' => page_data(),
-      'project' => all_posts('project'),
-      'video' => all_posts('video'),
-      'instagram' => all_posts('instagram_post'),
+      'project' => cpt_project(),
+      'video' => cpt_videos(),
+      'instagram' => cpt_instagram(),
     );
     $data['options'] = options_data();
     return $data;
@@ -18,5 +18,11 @@
       'methods' => 'GET',
       'callback' => 'main_data'
     ));
+    // Individual Posts
+    register_rest_route( $namespace, '/project/', array(
+      'methods' => 'GET',
+      'callback' => 'get_single_project',
+    ));
+
   }
 add_action( 'rest_api_init', 'api_setup_endpoints' );

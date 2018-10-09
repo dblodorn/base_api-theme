@@ -1,11 +1,12 @@
 <?php
 
-  function simple_slideshow_gallery($images) {
+  function simple_slideshow_gallery($images, $style) {
     if ($images) {
       foreach ($images as $image) {
         $img = array(
           'image' => return_image($image),
-          'slide_type' => 'image'
+          'slide_type' => 'image',
+          'image_style' => $style
         );
         $imgArray[] = $img;
       }
@@ -19,8 +20,7 @@
     if ($images) {
       foreach ($images as $image) {
         $img = array(
-          'image' => return_image($image),
-          'style' => 'cover',
+          'image' => return_image($image)
         );
         $imgArray[] = $img;
       }
@@ -32,6 +32,7 @@
 
   function return_simple_slideshow() {
     $images = get_sub_field( 'images' );
+    $style = get_sub_field('image_style');
     return array (
       'module' => 'simple_slideshow',
       'is_hero' => get_sub_field( 'is_hero' ),
@@ -43,8 +44,8 @@
       'autoplay' => get_sub_field( 'autoplay' ),
       'captions' => get_sub_field( 'captions' ),
       'transition_time' => get_sub_field( 'transition_time' ),
-      'image_style' => get_sub_field('image_style'),
-      'slides' => simple_slideshow_gallery($images),
+      'image_style' => $style,
+      'slides' => simple_slideshow_gallery($images, $style),
     );
   }
 
@@ -64,6 +65,21 @@
           'bg_color' => get_sub_field( 'background_color' ),
           'text_color' => get_sub_field( 'text_color' ),
           'theme' => get_sub_field( 'theme' ),
+        );
+      endwhile;
+    endif;
+    return $images;
+  }
+
+  function details_popup() {
+    $images = array();
+    if ( have_rows( 'details_images' ) ) :
+      while ( have_rows( 'details_images' ) ) : the_row();
+        $main_img = get_sub_field( 'main_image' );
+        $details = get_sub_field( 'details' );
+        $images[] = array(
+          'image' => return_image($main_img),
+          'deatails' => return_image_grid($details)
         );
       endwhile;
     endif;
@@ -90,9 +106,10 @@
     $images = get_sub_field( 'images' );
     return array (
       'module' => 'image_grid_popup',
-      'proportion' => get_sub_field('proportion'),
+      'thumbnail_proportion' => get_sub_field('image_grid_proportion'),
       'popup_type' => get_sub_field('popup_type'),
-      'columns' => get_sub_field('columns'),
+      'ig_columns' => get_sub_field('ig_columns'),
+      'ig_width' => get_sub_field('ig_width'),
       'image_style' => get_sub_field('image_style'),
       'images' => return_image_grid($images)
     );
@@ -101,7 +118,11 @@
   function return_details_popup() {
     return array (
       'module' => 'details_popup',
-      'images' => get_sub_field('proportion'),
+      'thumbnail_proportion' => get_sub_field('popup_grid_proportion'),
+      'columns' => get_sub_field('popup_grid_columns'),
+      'width' => get_sub_field('popup_grid_width'),
+      'image_style' => get_sub_field('image_style'),
+      'images' => details_popup()
     );
   }
 
@@ -137,10 +158,10 @@
     );
   }
   
-  function flex_content_image_gallery($p){
-    $fc_image_gallery = array();
-    if( get_field('image_gallery', $p->ID) ):
-      while( has_sub_field('image_gallery', $p->ID) ):
+  function flex_content_layout_modules($p){
+    $fc_layout_modules = array();
+    if( get_field('layout_modules', $p->ID) ):
+      while( has_sub_field('layout_modules', $p->ID) ):
         if(get_row_layout() == 'simple_slideshow'):
           $data = return_simple_slideshow();
         elseif(get_row_layout() == 'slideshow'):
@@ -156,22 +177,18 @@
         elseif(get_row_layout() == 'wysiwig_content'):
           $data = return_wysiwig_content();
         endif;
-        $fc_image_gallery[] = $data;
+        $fc_layout_modules[] = $data;
       endwhile;
-      return $fc_image_gallery;
+      return $fc_layout_modules;
     else:
       return false;
     endif;
   }
 
-  function return_text_overlay() {
-
-  }
-
   function flexible_image_gallery_template($p){
     $flex_layout = get_field('layout_modules', $p->ID);
     return array(
-      'layout' => flex_content_image_gallery($p)
+      'layout' => flex_content_layout_modules($p)
     );
   }
 ?>
