@@ -22,6 +22,33 @@
             "maxlength": ""
         },
         {
+            "key": "field_5bb93d7549a64",
+            "label": "Theme",
+            "name": "theme",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "a": "Theme A",
+                "b": "Theme B"
+            },
+            "default_value": [
+                "a"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5bb915766bf03",
             "label": "Show Top Content",
             "name": "show_top_content",
@@ -41,9 +68,9 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5bbbc2a4e3911",
-            "label": "Top Container Width",
-            "name": "top_container_width",
+            "key": "field_5bbecd57a680a",
+            "label": "Width",
+            "name": "top_style",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -65,7 +92,9 @@
                 "full_width": "Full Width",
                 "max_large": "Max Width Large",
                 "max_medium": "Max Width Medium",
-                "max_small": "Max Width Small"
+                "max_small": "Max Width Small",
+                "fixed_left": "Fixed Left Half Width",
+                "fixed_right": "Fixed Right Half Width"
             },
             "default_value": [
                 "full_width"
@@ -167,41 +196,6 @@
                     "maxlength": ""
                 }
             ]
-        },
-        {
-            "key": "field_5bb93d7549a64",
-            "label": "Theme",
-            "name": "theme",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5bb915766bf03",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "a": "Theme A",
-                "b": "Theme B"
-            },
-            "default_value": [
-                "a"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
         }
     ],
     "location": [
@@ -250,5 +244,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539105968
+    "modified": 1539299288
 }

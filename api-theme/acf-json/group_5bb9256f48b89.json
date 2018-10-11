@@ -75,10 +75,40 @@
                 "full_width": "Full Width",
                 "max_large": "Max Width Large",
                 "max_medium": "Max Width Medium",
-                "max_small": "Max Width Small"
+                "max_small": "Max Width Small",
+                "fixed_left": "Fixed Left Half Width",
+                "fixed_right": "Fixed Right Half Width"
             },
             "default_value": [
                 "full_width"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5bbfad7572898",
+            "label": "Display Method",
+            "name": "display_method",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "inline": "Inline",
+                "popup": "Popup",
+                "permalink": "Permalink"
+            },
+            "default_value": [
+                "inline"
             ],
             "allow_null": 0,
             "multiple": 0,
@@ -164,5 +194,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1539032540
+    "modified": 1539299301
 }

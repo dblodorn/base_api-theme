@@ -16,6 +16,21 @@
     return $data;
   }
 
+  function return_videos($post) {
+    return array (
+      'id' => $post->ID,
+      'title' => $post->post_title,
+      'slug' => $post->post_name,
+      'thumbnail' => get_the_post_thumbnail_url($post->ID),
+      'template' => 'single-video',
+      'top_content' => get_field('show_top_content', $post->ID),
+      'theme' => get_field('theme', $post->ID),
+      'short_description' => get_field('short_description', $post->ID),
+      'description' => get_field('description', $post->ID),
+      'video_url' => get_field('video_url', $p->ID, false, false),
+    );
+  }
+
   function cpt_videos(){
     $args = array(
       'post_type' => 'video',
@@ -26,7 +41,7 @@
       $data = array();
       while ($the_query->have_posts()) : $the_query->the_post();
         $post = get_post($post_id);
-        $data[] = post_data($post);
+        $data[] = return_videos($post);
       endwhile;
     endif;
     return $data;

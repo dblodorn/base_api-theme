@@ -483,6 +483,37 @@
                                     "placeholder": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_5bbfa4a3f0757",
+                            "label": "Width",
+                            "name": "width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "full_width": "Full Width",
+                                "max_large": "Max Width Large",
+                                "max_medium": "Max Width Medium",
+                                "max_small": "Max Width Small",
+                                "fixed_left": "Fixed Left Half Width",
+                                "fixed_right": "Fixed Right Half Width"
+                            },
+                            "default_value": [
+                                "full_width"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -774,6 +805,37 @@
                             "min": "",
                             "max": "",
                             "step": ""
+                        },
+                        {
+                            "key": "field_5bbfa46ff0756",
+                            "label": "Width",
+                            "name": "width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "full_width": "Full Width",
+                                "max_large": "Max Width Large",
+                                "max_medium": "Max Width Medium",
+                                "max_small": "Max Width Small",
+                                "fixed_left": "Fixed Left Half Width",
+                                "fixed_right": "Fixed Right Half Width"
+                            },
+                            "default_value": [
+                                "full_width"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -821,7 +883,9 @@
                                 "full_width": "Full Width",
                                 "max_large": "Max Width Large",
                                 "max_medium": "Max Width Medium",
-                                "max_small": "Max Width Small"
+                                "max_small": "Max Width Small",
+                                "fixed_left": "Fixed Left Half Width",
+                                "fixed_right": "Fixed Right Half Width"
                             },
                             "default_value": [
                                 "full_width"
@@ -925,7 +989,9 @@
                                 "full_width": "Full Width",
                                 "max_large": "Max Width Large",
                                 "max_medium": "Max Width Medium",
-                                "max_small": "Max Width Small"
+                                "max_small": "Max Width Small",
+                                "fixed_left": "Fixed Left Half Width",
+                                "fixed_right": "Fixed Right Half Width"
                             },
                             "default_value": [
                                 "full_width"
@@ -1093,7 +1159,9 @@
                                 "full_width": "Full Width",
                                 "max_large": "Max Width Large",
                                 "max_medium": "Max Width Medium",
-                                "max_small": "Max Width Small"
+                                "max_small": "Max Width Small",
+                                "fixed_left": "Fixed Left Half Width",
+                                "fixed_right": "Fixed Right Half Width"
                             },
                             "default_value": [
                                 "full_width"
@@ -1249,6 +1317,37 @@
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5bbfa3fed6a25",
+                            "label": "Width",
+                            "name": "width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "full_width": "Full Width",
+                                "max_large": "Max Width Large",
+                                "max_medium": "Max Width Medium",
+                                "max_small": "Max Width Small",
+                                "fixed_left": "Fixed Left Half Width",
+                                "fixed_right": "Fixed Right Half Width"
+                            },
+                            "default_value": [
+                                "full_width"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
                         },
                         {
                             "key": "field_5bbd1a1df910d",
@@ -1473,5 +1572,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539123725
+    "modified": 1539299248
 }

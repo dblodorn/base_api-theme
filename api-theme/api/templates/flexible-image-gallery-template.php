@@ -45,6 +45,7 @@
       'captions' => get_sub_field( 'captions' ),
       'transition_time' => get_sub_field( 'transition_time' ),
       'image_style' => $style,
+      'width' => get_sub_field('width'),
       'slides' => simple_slideshow_gallery($images, $style),
     );
   }
@@ -89,16 +90,17 @@
   function return_slideshow() {
     return array (
       'module' => 'slideshow',
-      'has_text_overlay' => get_sub_field( 'has_text_overlay'),
-      'text_overlay_content' => get_sub_field( 'text_overlay_content'),
+      'has_text_overlay' => get_sub_field( 'slideshow_text_overlay'),
+      'text_overlay_content' => get_sub_field( 'slideshow_text_overlay_content'),
+      'text_overlay_postion' => get_sub_field( 'slideshow_text_overlay_position'),
       'is_hero' => get_sub_field('is_hero'),
-      'text_overlay_postion' => get_sub_field( 'text_overlay_position'),
       'controls' => get_sub_field( 'controls' ),
       'pagination' => get_sub_field( 'pagination' ),
       'autoplay' => get_sub_field( 'autoplay' ),
       'captions' => get_sub_field( 'captions' ),
       'transition_time' => get_sub_field( 'transition_time' ),
-      'slides' => full_slideshow()
+      'slides' => full_slideshow(),
+      'width' => get_sub_field('width'),
     );
   }
 
@@ -140,6 +142,7 @@
       'video_file' => $video_file['url'],
       'video_cover_image' => return_image($image),
       'caption' => get_sub_field( 'video_caption' ),
+      'width' => get_sub_field('width'),
     );
   }
 

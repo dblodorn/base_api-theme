@@ -131,35 +131,6 @@
             "placeholder": ""
         },
         {
-            "key": "field_5bbbbc19746ab",
-            "label": "Container Width",
-            "name": "container_width",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "full_width": "Full Width",
-                "max_large": "Max Width Large",
-                "max_medium": "Max Width Medium",
-                "max_small": "Max Width Small"
-            },
-            "default_value": [
-                "full_width"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
             "key": "field_5bbb90939183b",
             "label": "Popup Grid",
             "name": "popup_grid",
@@ -177,6 +148,37 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_5bbbbc19746ab",
+            "label": "Container Width",
+            "name": "container_width",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "full_width": "Full Width",
+                "max_large": "Max Width Large",
+                "max_medium": "Max Width Medium",
+                "max_small": "Max Width Small",
+                "fixed_left": "Fixed Left Half Width",
+                "fixed_right": "Fixed Right Half Width"
+            },
+            "default_value": [
+                "full_width"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_5bbbb915f53ea",
@@ -450,5 +452,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539113557
+    "modified": 1539299264
 }
