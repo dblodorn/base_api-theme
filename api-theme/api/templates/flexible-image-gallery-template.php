@@ -128,6 +128,7 @@
     );
   }
 
+  // SINGLE PHOTO / VIDEO MODULE
   function return_single_video_photo() {
     $video_file = get_sub_field( 'video_file' );
     $image = get_sub_field( 'cover_image' );
@@ -146,6 +147,7 @@
     );
   }
 
+  // WYSIWIG MODULE
   function return_wysiwig_content() {
     return array (
       'module' => 'wysiwig_content',
@@ -154,7 +156,45 @@
       'wysiwig_position' => get_sub_field('wysiwig_position'),
     );
   }
-  
+
+  // VIDEO GRID MODULE
+  function return_video_list($field) {
+    $insert = get_sub_field('insert_type');
+    $posts = get_sub_field('video_collection');
+    $data = array();
+    if($insert == 'all_videos') {
+      $data = cpt_videos();
+    } else {
+      if($posts):    
+        foreach( $posts as $p ):
+          $p_data = get_post($p->ID);
+          $data[] = array(
+            'post_id' => $p_data->ID,
+            'slug' => $p_data->post_name,
+            'title' => get_the_title($p_data),
+            'post_type' => $p_data->post_type,
+            'thumbnail' => get_the_post_thumbnail_url($p->ID),
+            'video_url' => get_field('video_url', $p->ID, false, false),
+            'video_cover' => get_field('video_cover_image', $p->ID),
+          );
+        endforeach;
+      endif;
+    }
+    return $data;
+  }
+
+  function return_video_grid($p){
+    return array(
+      'module' => 'video_grid',
+      'columns' => get_sub_field('columns'),
+      'display_method' => get_sub_field('display_method'),
+      'proportion' => get_sub_field('proportion'),
+      'container_width' => get_sub_field('video_grid_width'),
+      'video_collection' => return_video_list()
+    );
+  }
+
+  // Flex Layout Logic
   function flex_content_layout_modules($p){
     $fc_layout_modules = array();
     if( get_field('layout_modules', $p->ID) ):
@@ -171,6 +211,8 @@
           $data = return_single_video_photo();
         elseif(get_row_layout() == 'wysiwig_content'):
           $data = return_wysiwig_content();
+        elseif(get_row_layout() == 'video_grid'):
+          $data = return_video_grid();
         endif;
         $fc_layout_modules[] = $data;
       endwhile;
