@@ -33,6 +33,7 @@
   function return_simple_slideshow() {
     $images = get_sub_field( 'images' );
     $style = get_sub_field('image_style');
+    $time = get_sub_field( 'transition_time' );
     return array (
       'module' => 'simple_slideshow',
       'is_hero' => get_sub_field( 'is_hero' ),
@@ -43,7 +44,7 @@
       'pagination' => get_sub_field( 'pagination' ),
       'autoplay' => get_sub_field( 'autoplay' ),
       'captions' => get_sub_field( 'captions' ),
-      'transition_time' => get_sub_field( 'transition_time' ),
+      'transition_time' => (int)$time,
       'image_style' => $style,
       'width' => get_sub_field('width'),
       'slides' => simple_slideshow_gallery($images, $style),
