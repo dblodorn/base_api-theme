@@ -137,3 +137,23 @@
     $thumb_url = $thumb_url_array[0];
     return $thumb_url;
   }
+
+  function return_null_false($in) {
+    if ($in != null || $in != "") {
+      return $in;
+    } else {
+      return false;
+    }
+  };
+
+  function return_thumb_meta($post) {
+    $thumb_id = get_post_thumbnail_id($post);
+    $thumb_post = get_post($thumb_id );
+    $alt = get_post_meta($thumb_id)['_wp_attachment_image_alt'][0];
+    return array (
+      'title' =>  $thumb_post->post_title,
+      'alt' => return_null_false($alt),
+      'caption' => return_null_false($thumb_post->post_excerpt),
+      'description' => return_null_false($thumb_post->post_content),
+    );
+  }

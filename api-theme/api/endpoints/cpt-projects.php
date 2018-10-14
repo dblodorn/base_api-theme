@@ -17,16 +17,18 @@
   }
 
   function return_videos($post) {
+    $description = get_field('description', $post->ID);
     return array (
-      'id' => $post->ID,
+      'post_id' => $post->ID,
       'title' => $post->post_title,
       'slug' => $post->post_name,
       'thumbnail' => return_thumb_url($post->ID),
+      'thumbnail_description' =>  return_thumb_meta($post),
       'template' => 'single-video',
       'top_content' => get_field('show_top_content', $post->ID),
       'theme' => get_field('theme', $post->ID),
       'short_description' => get_field('short_description', $post->ID),
-      'description' => get_field('description', $post->ID),
+      'description' => return_null_false($description),
       'video_url' => get_field('video_url', $p->ID, false, false),
     );
   }

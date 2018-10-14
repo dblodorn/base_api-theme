@@ -28,7 +28,7 @@
     $post_collection = get_field('post_collection', $p->ID);
     return array(
       'insert_type' => get_field('insert_type', $p->ID),
-      'post_type' => get_field('post_type', $p->ID),
+      'post_type' => return_null_false(get_field('post_type', $p->ID)),
       'popup_grid' => get_field('popup_grid', $p->ID),
       'columns' => get_field('columns', $p->ID),
       'link_wrapper' => get_field('link_wrapper', $p->ID),
@@ -41,7 +41,7 @@
       'thumbnail_proportion_mobile' => get_field('thumbnail_proportion_mobile', $p->ID),
       'thumbnail_proportion_max' => get_field('thumbnail_proportion_max', $p->ID),
       'style' => get_field('style', $p->ID),
-      'container_width' => get_field('container_width', $p->ID),
+      'container_width' => return_null_false(get_field('container_width', $p->ID)),
       'post_collection' => get_project_list('post_collection', $p)
     );
   }

@@ -29,7 +29,7 @@
       'theme' => get_field('theme', $post->ID),
       'short_description' => get_field('short_description', $post->ID),
       'description' => get_field('description', $post->ID),
-      'container_width' => get_field('top_style', $post->ID),
+      'container_width' => return_null_false(get_field('top_style', $post->ID)),
       'link_list' => return_link_list($post),
       'content' => template_data($template_name, $post),
       'taxonomies' => taxonomy_data($post),

@@ -168,12 +168,14 @@
       if($posts):    
         foreach( $posts as $p ):
           $p_data = get_post($p->ID);
+          $thumb = get_the_post_thumbnail($p);
           $data[] = array(
             'post_id' => $p_data->ID,
             'slug' => $p_data->post_name,
             'title' => get_the_title($p_data),
             'post_type' => $p_data->post_type,
             'thumbnail' => return_thumb_url($p_data),
+            'thumbnail_description' =>  return_thumb_meta($p),
             'video_url' => get_field('video_url', $p->ID, false, false),
             'video_cover' => get_field('video_cover_image', $p->ID),
           );
