@@ -122,3 +122,10 @@
     endif;
     return $data;
   }
+
+  function return_thumb_url($p) {
+    $thumb_id = get_post_thumbnail_id($p);
+    $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+    $thumb_url = $thumb_url_array[0];
+    return $thumb_url;
+  }

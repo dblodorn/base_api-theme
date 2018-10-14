@@ -21,7 +21,7 @@
       'id' => $post->ID,
       'title' => $post->post_title,
       'slug' => $post->post_name,
-      'thumbnail' => get_the_post_thumbnail_url($post->ID),
+      'thumbnail' => return_thumb_url($post->ID),
       'template' => 'single-video',
       'top_content' => get_field('show_top_content', $post->ID),
       'theme' => get_field('theme', $post->ID),

@@ -157,7 +157,7 @@
     );
   }
 
-  // VIDEO GRID MODULE
+  // VIDEO GRID MODULE  
   function return_video_list($field) {
     $insert = get_sub_field('insert_type');
     $posts = get_sub_field('video_collection');
@@ -173,7 +173,7 @@
             'slug' => $p_data->post_name,
             'title' => get_the_title($p_data),
             'post_type' => $p_data->post_type,
-            'thumbnail' => get_the_post_thumbnail_url($p->ID),
+            'thumbnail' => return_thumb_url($p_data),
             'video_url' => get_field('video_url', $p->ID, false, false),
             'video_cover' => get_field('video_cover_image', $p->ID),
           );
