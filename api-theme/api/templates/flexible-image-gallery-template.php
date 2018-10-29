@@ -38,6 +38,7 @@
       'module' => 'simple_slideshow',
       'is_hero' => get_sub_field( 'is_hero' ),
       'controls' => get_sub_field( 'controls' ),
+      'title' => get_sub_field( 'slideshow_title' ),
       'has_text_overlay' => get_sub_field( 'has_text_overlay'),
       'text_overlay_content' => get_sub_field( 'text_overlay_content'),
       'text_overlay_postion' => get_sub_field( 'text_overlay_position'),
@@ -91,6 +92,7 @@
   function return_slideshow() {
     return array (
       'module' => 'slideshow',
+      'title' => get_sub_field( 'slideshow_title' ),
       'has_text_overlay' => get_sub_field( 'slideshow_text_overlay'),
       'text_overlay_content' => get_sub_field( 'slideshow_text_overlay_content'),
       'text_overlay_postion' => get_sub_field( 'slideshow_text_overlay_position'),
@@ -135,6 +137,7 @@
     $image = get_sub_field( 'cover_image' );
     return array (
       'module' => 'single_video_photo',
+      'title' => get_sub_field('slideshow_title'),
       'has_text_overlay' => get_sub_field( 'svp_has_text_overlay'),
       'text_overlay_content' => get_sub_field( 'svp_text_overlay_content'),
       'text_overlay_postion' => get_sub_field( 'svp_text_overlay_position'),
@@ -152,6 +155,7 @@
   function return_wysiwig_content() {
     return array (
       'module' => 'wysiwig_content',
+      'title' => get_sub_field('slideshow_title'),
       'wysiwig' => get_sub_field('wysiwig'),
       'wysiwig_width' => get_sub_field('wysiwig_width'),
       'wysiwig_position' => get_sub_field('wysiwig_position'),

@@ -11,15 +11,11 @@
   // CUSTOM POST TYPES: REMOVE
   //-------------------------------------------------------------------
 
-  function remove_project() {
-    remove_action('init', 'project');
+  function delete_post_type(){
+    unregister_post_type( 'instagram_post' );
+    unregister_post_type( 'project' );
   }
-
-  function remove_instagram_post() {
-    remove_action('init', 'instagram_post');
-  }
-
-  add_action( 'after_setup_theme','remove_project', 1000 );
-  add_action( 'after_setup_theme','remove_instagram_post', 1000 );
+  
+  add_action('init','delete_post_type', 100);
   
 ?>
