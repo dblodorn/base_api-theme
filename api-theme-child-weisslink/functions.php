@@ -14,9 +14,6 @@
   function delete_post_type(){
     unregister_post_type( 'instagram_post' );
     unregister_post_type( 'video' );
-    unregister_taxonomy( 'client' );
-    unregister_taxonomy( 'capability' );
-    unregister_taxonomy( 'industry' );
   }
   
   add_action('init','delete_post_type', 100);

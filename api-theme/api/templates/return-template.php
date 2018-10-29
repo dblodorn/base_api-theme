@@ -9,7 +9,7 @@
     } else if ($template == 'page-templates/template-flexible-image-gallery.php') {
       $template_name = 'flexible-image-gallery';
     } else {
-      $template_name = 'default';
+      return false;
     }
     return $template_name;
   }
@@ -21,8 +21,9 @@
     } else if ($template_name == 'flexible-image-gallery') {
       $content = flexible_image_gallery_template($p);
     } else {
-      $content = flexible_image_gallery_template($p);
+      $content = false;
     }
     return $content;
   }
+
 ?>
