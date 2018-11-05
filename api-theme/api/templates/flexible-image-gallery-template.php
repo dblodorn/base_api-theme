@@ -37,14 +37,14 @@
     return array (
       'module' => 'simple_slideshow',
       'is_hero' => get_sub_field( 'is_hero' ),
-      'controls' => get_sub_field( 'controls' ),
       'title' => get_sub_field( 'slideshow_title' ),
       'has_text_overlay' => get_sub_field( 'has_text_overlay'),
       'text_overlay_content' => get_sub_field( 'text_overlay_content'),
       'text_overlay_postion' => get_sub_field( 'text_overlay_position'),
-      'pagination' => get_sub_field( 'pagination' ),
+      'captions' => returnOption( 'captions' ),
       'autoplay' => get_sub_field( 'autoplay' ),
-      'captions' => get_sub_field( 'captions' ),
+      'controls' => returnOption( 'controls' ),
+      'pagination' => returnOption( 'pagination' ),
       'transition_time' => (int)$time,
       'image_style' => $style,
       'width' => get_sub_field('width'),
@@ -97,10 +97,10 @@
       'text_overlay_content' => get_sub_field( 'slideshow_text_overlay_content'),
       'text_overlay_postion' => get_sub_field( 'slideshow_text_overlay_position'),
       'is_hero' => get_sub_field('is_hero'),
-      'controls' => get_sub_field( 'controls' ),
-      'pagination' => get_sub_field( 'pagination' ),
+      'controls' => returnOption( 'controls' ),
+      'pagination' => returnOption( 'pagination' ),
       'autoplay' => get_sub_field( 'autoplay' ),
-      'captions' => get_sub_field( 'captions' ),
+      'captions' => returnOption( 'captions' ),
       'transition_time' => get_sub_field( 'transition_time' ),
       'slides' => full_slideshow(),
       'width' => get_sub_field('width'),
@@ -117,17 +117,6 @@
       'ig_width' => get_sub_field('ig_width'),
       'image_style' => get_sub_field('image_style'),
       'images' => return_image_grid($images)
-    );
-  }
-
-  function return_details_popup() {
-    return array (
-      'module' => 'details_popup',
-      'thumbnail_proportion' => get_sub_field('popup_grid_proportion'),
-      'columns' => get_sub_field('popup_grid_columns'),
-      'width' => get_sub_field('popup_grid_width'),
-      'image_style' => get_sub_field('image_style'),
-      'images' => details_popup()
     );
   }
 
@@ -212,8 +201,6 @@
           $data = return_slideshow();
         elseif(get_row_layout() == 'image_grid_popup'):
           $data = return_image_grid_popup();
-        elseif(get_row_layout() == 'details_popup'):
-          $data = return_details_popup();
         elseif(get_row_layout() == 'single_video_photo'):
           $data = return_single_video_photo();
         elseif(get_row_layout() == 'wysiwig_content'):

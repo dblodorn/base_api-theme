@@ -28,13 +28,14 @@
     $post_collection = get_field('post_collection', $p->ID);
     return array(
       'insert_type' => get_field('insert_type', $p->ID),
+      'random' => get_field('random_order', $p->ID),
+      'infinite_scroll' => get_field('infinite_scroll', $p->ID),
       'post_type' => return_null_false(get_field('post_type', $p->ID)),
       'popup_grid' => get_field('popup_grid', $p->ID),
       'columns' => get_field('columns', $p->ID),
-      'link_wrapper' => get_field('link_wrapper', $p->ID),
-      'link_button' => get_field('link_button', $p->ID),
-      'show_title' => get_field('show_title', $p->ID),
-      'show_thumbnail' => get_field('show_thumbnail', $p->ID),
+      'insert_action' => returnOptionPostId('insert_action', $p),
+      'thumbnail_style' => returnOptionPostId('thumbnail_style', $p),
+      'show_description' => get_field('show_description', $p->ID),
       'show_taxonomies' => get_field('show_taxonomies', $p->ID),
       'show_post_taxonomies' => get_field('show_post_taxonomies', $p->ID),
       'thumbnail_proportion' => get_field('thumbnail_proportion', $p->ID),

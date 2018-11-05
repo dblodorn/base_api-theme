@@ -157,3 +157,21 @@
       'description' => return_null_false($thumb_post->post_content),
     );
   }
+
+  function returnOption($field) {
+    $option = get_sub_field($field);
+    if ($option == 'none' || null || false) {
+      return false;
+    } else {
+      return $option;
+    }
+  }
+
+  function returnOptionPostId($field, $p) {
+    $option = get_field($field, $p->ID);
+    if ($option == 'none' || null || false) {
+      return false;
+    } else {
+      return $option;
+    }
+  }

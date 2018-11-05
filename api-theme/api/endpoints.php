@@ -7,7 +7,7 @@
       'pages' => page_data(),
       'project' => cpt_project(),
       'video' => cpt_videos(),
-      'instagram' => cpt_instagram(),
+      'instagram_post' => cpt_instagram(),
     );
     $data['options'] = options_data();
     return $data;

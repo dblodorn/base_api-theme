@@ -7,8 +7,6 @@ var gulp        = require('gulp'),
 
 var watchFolder = './api-theme/**/*';
 
-var gemsFolder = './api-theme-child-gems/**/*';
-
 /* Task Library - API */
 gulp.task('api', function() {
   gulp.src(watchFolder)
@@ -20,20 +18,6 @@ gulp.task('api', function() {
     }));
 });
 
-gulp.task('api-gems', function() {
-  gulp.src(watchFolder)
-    .pipe(sftp({
-      host: config.sftp_host,
-      user: config.sftp_user,
-      remotePath: config.sftp_gems,
-      passphrase: config.passphrase
-    }));
-});
-
 gulp.task('default', function () {
   gulp.watch(watchFolder, ['api']);
-});
-
-gulp.task('gems', function () {
-  gulp.watch(gemsFolder, ['api-gems']);
 });
