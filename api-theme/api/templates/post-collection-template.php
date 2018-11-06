@@ -35,6 +35,8 @@
       'columns' => get_field('columns', $p->ID),
       'insert_action' => returnOptionPostId('insert_action', $p),
       'thumbnail_style' => returnOptionPostId('thumbnail_style', $p),
+      'link_style' => returnOptionPostId('link_style', $p),
+      'link_cta' => get_field('link_cta', $p->ID),
       'show_description' => get_field('show_description', $p->ID),
       'show_taxonomies' => get_field('show_taxonomies', $p->ID),
       'show_post_taxonomies' => get_field('show_post_taxonomies', $p->ID),

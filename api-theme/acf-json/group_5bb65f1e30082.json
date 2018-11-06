@@ -172,7 +172,7 @@
             "label": "Insert Action",
             "name": "insert_action",
             "type": "select",
-            "instructions": "What the post insert will let you do.\r\nPopup Grid : Make an image grid of popups from post featured image. Must Have Show Thumbnail Selected. Good for Instagram post type.\r\nLink Wrapper: Entire card is a link.\r\nLink Button : Display a button to link to post.\r\nText Link : Just link with post title",
+            "instructions": "What the post insert will let you do.\r\nPage Link : Card links to post.\r\nPopup Grid : Make an image grid of popups from post featured image. Must Have Show Thumbnail Selected. Good for Instagram post type.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -181,13 +181,11 @@
                 "id": ""
             },
             "choices": {
-                "popup_grid": "Popup Grid",
-                "link_wrapper": "Link Wrapper",
-                "link_button": "Link Button",
-                "text_link": "Text Link"
+                "page_link": "Page Link",
+                "popup_grid": "Popup Grid"
             },
             "default_value": [
-                "link_button"
+                "page_link"
             ],
             "allow_null": 0,
             "multiple": 0,
@@ -313,7 +311,7 @@
             "label": "Show Short Description",
             "name": "show_description",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "Select to show the post short description under title.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -323,14 +321,93 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
+        },
+        {
+            "key": "field_5be0d8f7967ac",
+            "label": "Link Style",
+            "name": "link_style",
+            "type": "select",
+            "instructions": "Select whether you want a CTA button for the thumbnail link, or the entire thumbnail to be clickable.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5be09ee579d34",
+                        "operator": "!=",
+                        "value": "image_only"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5be09ee579d34",
+                        "operator": "!=",
+                        "value": "text_only"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "button_link": "CTA Button Link",
+                "full_link": "Thumbnail Link"
+            },
+            "default_value": [
+                "full_link"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
             "show_column": 0,
             "show_column_sortable": 0,
             "show_column_weight": 1000,
             "allow_quickedit": 0,
             "allow_bulkedit": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "placeholder": ""
+        },
+        {
+            "key": "field_5be0d9c243ae1",
+            "label": "Link CTA",
+            "name": "link_cta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5be0d8f7967ac",
+                        "operator": "==",
+                        "value": "button_link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
         },
         {
             "key": "field_5bb7d221c0abf",
@@ -339,7 +416,15 @@
             "type": "select",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5be09ee579d34",
+                        "operator": "!=",
+                        "value": "text_only"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -356,9 +441,14 @@
             ],
             "allow_null": 1,
             "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
+            "ui": 1,
             "ajax": 0,
+            "return_format": "value",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
             "placeholder": ""
         },
         {
@@ -434,9 +524,9 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5bb7d1cac0abc",
-                        "operator": "==",
-                        "value": "1"
+                        "field": "field_5be09ee579d34",
+                        "operator": "!=",
+                        "value": "text_only"
                     }
                 ]
             ],
@@ -451,7 +541,12 @@
             "append": "",
             "min": "",
             "max": "",
-            "step": ""
+            "step": "",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
         },
         {
             "key": "field_5bbce51d12e2c",
@@ -463,9 +558,9 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5bb7d1cac0abc",
-                        "operator": "==",
-                        "value": "1"
+                        "field": "field_5be09ee579d34",
+                        "operator": "!=",
+                        "value": "text_only"
                     }
                 ]
             ],
@@ -480,7 +575,12 @@
             "append": "",
             "min": 10,
             "max": "",
-            "step": ""
+            "step": "",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
         },
         {
             "key": "field_5bbcecb312ebc",
@@ -492,9 +592,9 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5bb7d1cac0abc",
-                        "operator": "==",
-                        "value": "1"
+                        "field": "field_5be09ee579d34",
+                        "operator": "!=",
+                        "value": "text_only"
                     }
                 ]
             ],
@@ -509,7 +609,12 @@
             "append": "",
             "min": "",
             "max": "",
-            "step": ""
+            "step": "",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
         },
         {
             "key": "field_5bb7d206c0abe",
@@ -571,5 +676,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1541450198
+    "modified": 1541462579
 }
