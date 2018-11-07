@@ -40,10 +40,10 @@
       'title' => get_sub_field( 'slideshow_title' ),
       'has_text_overlay' => get_sub_field( 'has_text_overlay'),
       'text_overlay_content' => get_sub_field( 'text_overlay_content'),
-      'text_overlay_postion' => get_sub_field( 'text_overlay_position'),
-      'captions' => returnOption( 'captions' ),
+      'captions' => get_sub_field( 'captions' ),
       'autoplay' => get_sub_field( 'autoplay' ),
       'controls' => returnOption( 'controls' ),
+      'controls_color' => returnOption( 'controls_color' ),
       'pagination' => returnOption( 'pagination' ),
       'transition_time' => (int)$time,
       'image_style' => $style,
@@ -90,18 +90,11 @@
   }
 
   function return_slideshow() {
+    $time = get_sub_field( 'transition_time' );
     return array (
       'module' => 'slideshow',
-      'title' => get_sub_field( 'slideshow_title' ),
-      'has_text_overlay' => get_sub_field( 'slideshow_text_overlay'),
-      'text_overlay_content' => get_sub_field( 'slideshow_text_overlay_content'),
-      'text_overlay_postion' => get_sub_field( 'slideshow_text_overlay_position'),
       'is_hero' => get_sub_field('is_hero'),
-      'controls' => returnOption( 'controls' ),
-      'pagination' => returnOption( 'pagination' ),
-      'autoplay' => get_sub_field( 'autoplay' ),
-      'captions' => returnOption( 'captions' ),
-      'transition_time' => get_sub_field( 'transition_time' ),
+      'transition_time' => (int)$time,
       'slides' => full_slideshow(),
       'width' => get_sub_field('width'),
     );
