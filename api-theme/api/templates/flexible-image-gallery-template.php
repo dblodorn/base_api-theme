@@ -90,6 +90,7 @@
   }
 
   function return_slideshow() {
+    $time = get_sub_field( 'transition_time' );
     return array (
       'module' => 'slideshow',
       'title' => get_sub_field( 'slideshow_title' ),
@@ -101,7 +102,7 @@
       'pagination' => returnOption( 'pagination' ),
       'autoplay' => get_sub_field( 'autoplay' ),
       'captions' => returnOption( 'captions' ),
-      'transition_time' => get_sub_field( 'transition_time' ),
+      'transition_time' => (int)$time,
       'slides' => full_slideshow(),
       'width' => get_sub_field('width'),
     );
