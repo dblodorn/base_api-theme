@@ -47,6 +47,7 @@ add_filter( 'template_include', 'phpless_template');
 /* ACF Add Options Page
 /*-----------------------------------------------------------------------------------*/
 
+/*
 if(function_exists('acf_add_options_page')) {
   acf_add_options_page(array(
     'page_title' 	=> 'Site Styling',
@@ -57,6 +58,7 @@ if(function_exists('acf_add_options_page')) {
     'position' => 30
   ));
 }
+*/
 
 function get_current_template() {
   global $template;

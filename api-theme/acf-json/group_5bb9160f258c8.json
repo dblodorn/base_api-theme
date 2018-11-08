@@ -1,0 +1,335 @@
+{
+    "key": "group_5bb9160f258c8",
+    "title": "Post Basics",
+    "fields": [
+        {
+            "key": "field_5be07b945d6db",
+            "label": "Should Use",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5bb6bf0b93009",
+            "label": "Short Description",
+            "name": "short_description",
+            "type": "text",
+            "instructions": "For thumbnails and meta data.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5be07a935d6d8",
+            "label": "Options",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5bb93d7549a64",
+            "label": "Theme",
+            "name": "theme",
+            "type": "select",
+            "instructions": "Select between different styling",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "a": "Theme A",
+                "b": "Theme B"
+            },
+            "default_value": [
+                "a"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5be07ad55d6d9",
+            "label": "Additional Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5bb915766bf03",
+            "label": "Add Additional Content",
+            "name": "show_top_content",
+            "type": "true_false",
+            "instructions": "Select to display top short intro and make use of these additional content options.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
+        },
+        {
+            "key": "field_5bb66ab09694d",
+            "label": "Wysiwig Content",
+            "name": "description",
+            "type": "wysiwyg",
+            "instructions": "General purpose \"What you see is What you Get Field.\" You can use standard html tags in this - great for simple blog style content and text pages.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bb915766bf03",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5bbecd57a680a",
+            "label": "Wysiwig Width",
+            "name": "top_style",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bb915766bf03",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "full_width": "Full Width",
+                "max_large": "Max Width Large",
+                "max_medium": "Max Width Medium",
+                "max_small": "Max Width Small",
+                "fixed_left": "Fixed Left Half Width",
+                "fixed_right": "Fixed Right Half Width"
+            },
+            "default_value": [
+                "full_width"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5be07b625d6da",
+            "label": "Add Link List",
+            "name": "add_link_list",
+            "type": "true_false",
+            "instructions": "Handy if you want a list of external links.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "show_column": 0,
+            "show_column_sortable": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
+        },
+        {
+            "key": "field_5bbcd39b189c2",
+            "label": "Link List",
+            "name": "link_list",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bb915766bf03",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5bbcd3a9189c3",
+                    "label": "Url",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5bbcd3b5189c4",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "video"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1541696794
+}
