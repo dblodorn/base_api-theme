@@ -112,7 +112,9 @@
     return array (
       'module' => 'image_grid_popup',
       'thumbnail_proportion' => get_sub_field('image_grid_proportion'),
-      'popup_type' => get_sub_field('popup_type'),
+      'popup_type' => returnOption('popup_type'),
+      'popup_on_mobile' => get_sub_field('popup_on_mobile'),
+      'captions' => returnOption('captions'),
       'ig_columns' => get_sub_field('ig_columns'),
       'ig_width' => get_sub_field('ig_width'),
       'image_style' => get_sub_field('image_style'),

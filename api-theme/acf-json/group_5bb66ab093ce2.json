@@ -39,6 +39,28 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_5be22212965d3",
+                            "label": "Slideshow Title",
+                            "name": "slideshow_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "show_column": 0,
+                            "show_column_sortable": 0,
+                            "show_column_weight": 1000
+                        },
+                        {
                             "key": "field_5bb6aea620969",
                             "label": "Images",
                             "name": "images",
@@ -113,6 +135,38 @@
                             "placeholder": ""
                         },
                         {
+                            "key": "field_5be222465be82",
+                            "label": "Controls Color",
+                            "name": "controls_color",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "light": "Light Controls",
+                                "dark": "Dark Controls"
+                            },
+                            "default_value": [
+                                "dark"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "show_column": 0,
+                            "show_column_sortable": 0,
+                            "show_column_weight": 1000,
+                            "allow_quickedit": 0,
+                            "allow_bulkedit": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
                             "key": "field_5bbabf158f6c7",
                             "label": "Pagination",
                             "name": "pagination",
@@ -126,8 +180,8 @@
                                 "id": ""
                             },
                             "choices": {
-                                "dots": "Dots",
-                                "numeric": "Numbers",
+                                "bullets": "Bullets",
+                                "fraction": "Fraction",
                                 "none": "Don't show Pagination"
                             },
                             "default_value": [
@@ -293,46 +347,6 @@
                             "show_column_weight": 1000,
                             "allow_quickedit": 0,
                             "allow_bulkedit": 0
-                        },
-                        {
-                            "key": "field_5bbb94d8b3f5c",
-                            "label": "Text Overlay Position",
-                            "name": "text_overlay_position",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5bbb946cb3f5b",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "centered": "Centered",
-                                "centered_right": "Centered Right",
-                                "top_right": "Top Right",
-                                "top_left": "Top Left",
-                                "centered_left": "Centered Left",
-                                "bottom_left": "Bottom Left",
-                                "bottom_right": "Bottom Right"
-                            },
-                            "default_value": [
-                                "centered"
-                            ],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
                         },
                         {
                             "key": "field_5bbb94dbb3f5d",
@@ -695,7 +709,7 @@
                         },
                         {
                             "key": "field_5be07df6521e2",
-                            "label": "Slideshow Options",
+                            "label": "Options",
                             "name": "",
                             "type": "tab",
                             "instructions": "",
@@ -708,313 +722,6 @@
                             },
                             "placement": "top",
                             "endpoint": 0
-                        },
-                        {
-                            "key": "field_5bbac815a4861",
-                            "label": "Autoplay",
-                            "name": "autoplay",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "show_column": 0,
-                            "show_column_sortable": 0,
-                            "show_column_weight": 1000,
-                            "allow_quickedit": 0,
-                            "allow_bulkedit": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_5bbab38dedce3",
-                            "label": "Controls",
-                            "name": "controls",
-                            "type": "select",
-                            "instructions": "Options for back and forth arrows.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "fixed": "Fixed Position",
-                                "hover": "Show arrows on hover",
-                                "none": "Don't show controls"
-                            },
-                            "default_value": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "show_column": 0,
-                            "show_column_sortable": 0,
-                            "show_column_weight": 1000,
-                            "allow_quickedit": 0,
-                            "allow_bulkedit": 0,
-                            "ajax": 0,
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_5bbab3a1edce4",
-                            "label": "Pagination",
-                            "name": "pagination",
-                            "type": "select",
-                            "instructions": "Select pagination style.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "dots": "Dots",
-                                "numeric": "Numbers",
-                                "none": "Don't show Pagination"
-                            },
-                            "default_value": [
-                                "none"
-                            ],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "show_column": 0,
-                            "show_column_sortable": 0,
-                            "show_column_weight": 1000,
-                            "allow_quickedit": 0,
-                            "allow_bulkedit": 0,
-                            "ajax": 0,
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_5bbb81e6bc31c",
-                            "label": "Transition Time",
-                            "name": "transition_time",
-                            "type": "number",
-                            "instructions": "In Milliseconds (i.e. 3000 = 3seconds)",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": 1000,
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "min": "",
-                            "max": "",
-                            "step": ""
-                        },
-                        {
-                            "key": "field_5be08000521e3",
-                            "label": "Layout Options",
-                            "name": "",
-                            "type": "tab",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "placement": "top",
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_5be08a138478f",
-                            "label": "List View Toggle",
-                            "name": "list_view",
-                            "type": "true_false",
-                            "instructions": "Add a toggle button to show the slides in list view.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 1,
-                            "ui_on_text": "",
-                            "ui_off_text": "",
-                            "show_column": 0,
-                            "show_column_sortable": 0,
-                            "show_column_weight": 1000,
-                            "allow_quickedit": 0,
-                            "allow_bulkedit": 0
-                        },
-                        {
-                            "key": "field_5bbab3cfedce6",
-                            "label": "Captions",
-                            "name": "captions",
-                            "type": "select",
-                            "instructions": "Show Image Captions, pulled from image title and description.",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5bba5d215abb1",
-                                        "operator": "!=",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "hover": "Show on hover",
-                                "fixed": "Fixed position captions",
-                                "none": "No captions"
-                            },
-                            "default_value": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 1,
-                            "ajax": 0,
-                            "return_format": "value",
-                            "show_column": 0,
-                            "show_column_sortable": 0,
-                            "show_column_weight": 1000,
-                            "allow_quickedit": 0,
-                            "allow_bulkedit": 0,
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_5bba5d215abb1",
-                            "label": "Add Slideshow Text Overlay",
-                            "name": "slideshow_text_overlay",
-                            "type": "true_false",
-                            "instructions": "Text overlay over entire slideshow. Best used with Autoplay and background type images as a page Hero. This will override image captions.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 1,
-                            "ui_on_text": "",
-                            "ui_off_text": "",
-                            "show_column": 0,
-                            "show_column_sortable": 0,
-                            "show_column_weight": 1000,
-                            "allow_quickedit": 0,
-                            "allow_bulkedit": 0
-                        },
-                        {
-                            "key": "field_5bba5d0b5abb0",
-                            "label": "Slideshow Text Overlay Content",
-                            "name": "slideshow_text_overlay_content",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5bba5d215abb1",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": 4,
-                            "new_lines": "",
-                            "show_column": 0,
-                            "show_column_weight": 1000,
-                            "allow_quickedit": 0,
-                            "allow_bulkedit": 0
-                        },
-                        {
-                            "key": "field_5bba5d8f5abb2",
-                            "label": "Slideshow Text Overlay Position",
-                            "name": "slideshow_text_overlay_position",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5bba5d215abb1",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "centered": "Centered",
-                                "centered_right": "Centered Right",
-                                "top_right": "Top Right",
-                                "top_left": "Top Left",
-                                "centered_left": "Centered Left",
-                                "bottom_left": "Bottom Left",
-                                "bottom_right": "Bottom Right"
-                            },
-                            "default_value": [
-                                "centered"
-                            ],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_5bb6b20d4ba1f",
-                            "label": "Fixed Hero",
-                            "name": "is_hero",
-                            "type": "true_false",
-                            "instructions": "Only good if you wont have any other content on the page - like good for a landing page, or a page where you only want a slideshow.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "show_column": 0,
-                            "show_column_sortable": 0,
-                            "show_column_weight": 1000,
-                            "allow_quickedit": 0,
-                            "allow_bulkedit": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
                         },
                         {
                             "key": "field_5bbfa4a3f0757",
@@ -1046,6 +753,51 @@
                             "return_format": "value",
                             "ajax": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_5bbb81e6bc31c",
+                            "label": "Transition Time",
+                            "name": "transition_time",
+                            "type": "number",
+                            "instructions": "In Milliseconds (i.e. 3000 = 3seconds)",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 1000,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": ""
+                        },
+                        {
+                            "key": "field_5bb6b20d4ba1f",
+                            "label": "Fixed Hero",
+                            "name": "is_hero",
+                            "type": "true_false",
+                            "instructions": "Only good if you wont have any other content on the page - like good for a landing page, or a page where you only want a slideshow.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "show_column": 0,
+                            "show_column_sortable": 0,
+                            "show_column_weight": 1000,
+                            "allow_quickedit": 0,
+                            "allow_bulkedit": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -1158,10 +910,10 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_5bb91b0d596ce",
-                            "label": "Popup Type",
-                            "name": "popup_type",
-                            "type": "select",
+                            "key": "field_5be37c0be8839",
+                            "label": "Content",
+                            "name": "",
+                            "type": "tab",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1170,24 +922,15 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "single": "Single Image Popup",
-                                "slideshow": "Slideshow Popup"
-                            },
-                            "default_value": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
-                            "key": "field_5bbbbab34fa86",
-                            "label": "Image Grid Width",
-                            "name": "ig_width",
-                            "type": "select",
-                            "instructions": "",
+                            "key": "field_5bb66ab09daad",
+                            "label": "Thumbnail Proportion",
+                            "name": "image_grid_proportion",
+                            "type": "number",
+                            "instructions": "Image proportion. if 4 : 5 enter 80 (4 \/ 5 = 80%) - for a square enter 100. etc.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1195,52 +938,13 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "full_width": "Full Width",
-                                "max_large": "Max Width Large",
-                                "max_medium": "Max Width Medium",
-                                "max_small": "Max Width Small",
-                                "fixed_left": "Fixed Left Half Width",
-                                "fixed_right": "Fixed Right Half Width"
-                            },
-                            "default_value": [
-                                "full_width"
-                            ],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_5bb66ab09d91f",
-                            "label": "Image Grid Columns",
-                            "name": "ig_columns",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "one_col": "One Column",
-                                "two_col": "Two Column",
-                                "three_col": "Three Column",
-                                "four_col": "Four Column"
-                            },
-                            "default_value": [
-                                "col_two"
-                            ],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
+                            "default_value": 100,
+                            "placeholder": 100,
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": ""
                         },
                         {
                             "key": "field_5bb66ab09da28",
@@ -1266,6 +970,124 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_5be37c2187357",
+                            "label": "Options",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5bb91b0d596ce",
+                            "label": "Popup Type",
+                            "name": "popup_type",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "single": "Single Image Popup",
+                                "slideshow": "Slideshow Popup",
+                                "none": "No Popup"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "show_column": 0,
+                            "show_column_sortable": 0,
+                            "show_column_weight": 1000,
+                            "allow_quickedit": 0,
+                            "allow_bulkedit": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5be36cac36d1b",
+                            "label": "Popup on Mobile",
+                            "name": "popup_on_mobile",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5bb91b0d596ce",
+                                        "operator": "==",
+                                        "value": "single"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_5bb91b0d596ce",
+                                        "operator": "==",
+                                        "value": "slideshow"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "show_column": 0,
+                            "show_column_sortable": 0,
+                            "show_column_weight": 1000,
+                            "allow_quickedit": 0,
+                            "allow_bulkedit": 0
+                        },
+                        {
+                            "key": "field_5be36c5236d1a",
+                            "label": "Captions",
+                            "name": "captions",
+                            "type": "select",
+                            "instructions": "Select where you want to show image captions.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "grid": "Show on Grid only",
+                                "popup": "Show on Popup only",
+                                "both": "Show on Grid and Popup",
+                                "none": "No Captions"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "show_column": 0,
+                            "show_column_sortable": 0,
+                            "show_column_weight": 1000,
+                            "allow_quickedit": 0,
+                            "allow_bulkedit": 0,
+                            "placeholder": ""
                         },
                         {
                             "key": "field_5bb66ab09d9a3",
@@ -1298,40 +1120,9 @@
                             "placeholder": ""
                         },
                         {
-                            "key": "field_5bb66ab09daad",
-                            "label": "Thumbnail Proportion",
-                            "name": "image_grid_proportion",
-                            "type": "number",
-                            "instructions": "Image proportion. if 4 : 5 enter 80 (4 \/ 5 = 80%) - for a square enter 100. etc.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": 100,
-                            "placeholder": 100,
-                            "prepend": "",
-                            "append": "",
-                            "min": "",
-                            "max": "",
-                            "step": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5b731630662a9": {
-                    "key": "layout_5b731630662a9",
-                    "name": "single_video_photo",
-                    "label": "Single Video \/ Photo",
-                    "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_5bbfa3fed6a25",
-                            "label": "Width",
-                            "name": "width",
+                            "key": "field_5bbbbab34fa86",
+                            "label": "Image Grid Width",
+                            "name": "ig_width",
                             "type": "select",
                             "instructions": "",
                             "required": 0,
@@ -1354,10 +1145,75 @@
                             ],
                             "allow_null": 0,
                             "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
+                            "ui": 1,
                             "ajax": 0,
+                            "return_format": "value",
+                            "show_column": 0,
+                            "show_column_sortable": 0,
+                            "show_column_weight": 1000,
+                            "allow_quickedit": 0,
+                            "allow_bulkedit": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_5bb66ab09d91f",
+                            "label": "Image Grid Columns",
+                            "name": "ig_columns",
+                            "type": "select",
+                            "instructions": "Amount of images per grid column.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "one_col": "One Column",
+                                "two_col": "Two Column",
+                                "three_col": "Three Column",
+                                "four_col": "Four Column"
+                            },
+                            "default_value": [
+                                "col_two"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "show_column": 0,
+                            "show_column_sortable": 0,
+                            "show_column_weight": 1000,
+                            "allow_quickedit": 0,
+                            "allow_bulkedit": 0,
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5b731630662a9": {
+                    "key": "layout_5b731630662a9",
+                    "name": "single_video_photo",
+                    "label": "Single Video \/ Photo",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_5be37c4f0135c",
+                            "label": "Content",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_5bbd1867f910c",
@@ -1500,6 +1356,53 @@
                             "show_column_weight": 1000,
                             "allow_quickedit": 0,
                             "allow_bulkedit": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5be37c732f7e4",
+                            "label": "Options",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5bbfa3fed6a25",
+                            "label": "Width",
+                            "name": "width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "full_width": "Full Width",
+                                "max_large": "Max Width Large",
+                                "max_medium": "Max Width Medium",
+                                "max_small": "Max Width Small",
+                                "fixed_left": "Fixed Left Half Width",
+                                "fixed_right": "Fixed Right Half Width"
+                            },
+                            "default_value": [
+                                "full_width"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -1856,5 +1759,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1541450189
+    "modified": 1541696789
 }
