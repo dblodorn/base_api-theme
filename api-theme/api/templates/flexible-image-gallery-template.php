@@ -44,6 +44,7 @@
       'captions' => returnOption( 'captions' ),
       'autoplay' => get_sub_field( 'autoplay' ),
       'controls' => returnOption( 'controls' ),
+      'controls_color' => returnOption( 'controls_color' ),
       'pagination' => returnOption( 'pagination' ),
       'transition_time' => (int)$time,
       'image_style' => $style,
