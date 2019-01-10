@@ -145,7 +145,7 @@
   }
 
   // VIDEO GRID MODULE  
-  function return_video_list($field) {
+  function return_video_list() {
     $insert = get_sub_field('insert_type');
     $posts = get_sub_field('video_collection');
     $data = array();
@@ -172,7 +172,7 @@
     return $data;
   }
 
-  function return_video_grid($p){
+  function return_video_grid(){
     return array(
       'module' => 'video_grid',
       'columns' => get_sub_field('columns'),
