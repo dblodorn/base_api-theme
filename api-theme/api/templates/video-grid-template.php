@@ -9,6 +9,8 @@
           'post_id' => $p_data->ID,
           'slug' => $p_data->post_name,
           'title' => get_the_title($p_data),
+          'short_description' => get_field('short_description', $p->ID),
+          'theme' => get_field('theme', $p->ID),
           'post_type' => $p_data->post_type,
           'thumbnail' => get_the_post_thumbnail_url($p->ID),
           'video_url' => get_field('video_url', $p->ID, false, false),
