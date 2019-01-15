@@ -106,6 +106,15 @@
     }
   }
 
+  function is_homepage($id) {
+    $home = get_option( 'page_on_front' );
+    if ($home == $id) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   function return_home($url) {
     $end = basename(parse_url($url, PHP_URL_PATH));
     if ($end != "") {

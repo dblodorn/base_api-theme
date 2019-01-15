@@ -26,13 +26,14 @@
         $items_raw = wp_get_nav_menu_items($menu_item);
         $items = array();
         foreach ($items_raw as $item) {
+          $id = get_post_meta( $item->ID, '_menu_item_object_id', true );
           $i = new stdClass();
-          $i->id = $item->ID;
+          $i->id = $id;
           $i->title = $item->title;
           $i->url = $item->url;
           $i->sub_route = sub_route($item->object);
           $i->slug = basename(parse_url($item->url, PHP_URL_PATH));
-          $i->is_home = return_home($item->url);
+          $i->is_home = is_homepage($id);
           $i->external_link = external_link($item->object);
           $items[] = $i;
         }

@@ -13,17 +13,18 @@
     endif;
     return $links;
   }
-  
+
   function post_data($post) {
     $template = get_post_meta( $post->ID, '_wp_page_template', true );
     $template_name = return_template($template);
     $permalink = get_permalink($post->ID);
+    $pid = $post->ID;
     return array(
-      'id' => $post->ID,
+      'id' => $pid,
       'title' => $post->post_title,
       'slug' => $post->post_name,
       'thumbnail' => get_the_post_thumbnail_url($post->ID),
-      'is_home' => return_home($permalink),
+      'is_home' => is_homepage($pid),
       'template' => $template_name,
       'top_content' => get_field('show_top_content', $post->ID),
       'theme' => get_field('theme', $post->ID),
