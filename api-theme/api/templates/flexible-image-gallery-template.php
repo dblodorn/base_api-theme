@@ -16,20 +16,6 @@
     }
   }
 
-  function return_image_grid($images) {
-    if ($images) {
-      foreach ($images as $image) {
-        $img = array(
-          'image' => return_image($image)
-        );
-        $imgArray[] = $img;
-      }
-      return $imgArray;
-    } else {
-      return false;
-    }
-  }
-
   function return_simple_slideshow() {
     $images = get_sub_field( 'images' );
     $style = get_sub_field('image_style');
@@ -75,21 +61,6 @@
     return $images;
   }
 
-  function details_popup() {
-    $images = array();
-    if ( have_rows( 'details_images' ) ) :
-      while ( have_rows( 'details_images' ) ) : the_row();
-        $main_img = get_sub_field( 'main_image' );
-        $details = get_sub_field( 'details' );
-        $images[] = array(
-          'image' => return_image($main_img),
-          'deatails' => return_image_grid($details)
-        );
-      endwhile;
-    endif;
-    return $images;
-  }
-
   function return_slideshow() {
     $time = get_sub_field( 'transition_time' );
     return array (
@@ -110,18 +81,56 @@
   }
 
   function return_image_grid_popup() {
-    $images = get_sub_field( 'images' );
+    $popup_type = returnOption('popup_type');
     return array (
       'module' => 'image_grid_popup',
       'thumbnail_proportion' => get_sub_field('image_grid_proportion'),
-      'popup_type' => returnOption('popup_type'),
+      'popup_type' => $popup_type,
       'popup_on_mobile' => get_sub_field('popup_on_mobile'),
       'captions' => returnOption('captions'),
       'ig_columns' => get_sub_field('ig_columns'),
       'ig_width' => get_sub_field('ig_width'),
       'image_style' => get_sub_field('image_style'),
-      'images' => return_image_grid($images)
+      'images' => return_grid_type($popup_type)
     );
+  }
+
+  function return_grid_type($popup_type) {
+    if ( $popup_type == 'details') {
+      return details_popup();
+    } else {
+      $images = get_sub_field('images');
+      return return_image_grid($images);
+    }
+  }
+
+  function return_image_grid($images) {
+    if ($images) {
+      foreach ($images as $image) {
+        $img = array(
+          'image' => return_image($image)
+        );
+        $imgArray[] = $img;
+      }
+      return $imgArray;
+    } else {
+      return false;
+    }
+  }
+
+  function details_popup() {
+    $images = array();
+    if ( have_rows( 'details_images' ) ) :
+      while ( have_rows( 'details_images' ) ) : the_row();
+        $main_img = get_sub_field( 'main_image' );
+        $details = get_sub_field( 'detail_images' );
+        $images[] = array(
+          'image' => return_image($main_img),
+          'details' => return_image_grid($details)
+        );
+      endwhile;
+    endif;
+    return $images;
   }
 
   // SINGLE PHOTO / VIDEO MODULE
